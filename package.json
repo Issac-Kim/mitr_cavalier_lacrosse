@@ -1,0 +1,23 @@
+{
+  "name": "mitr_cavalier_lacrosse",
+  "version": "1.0.0",
+  "description": "Cavalier Lacrosse Website",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Issac-Kim/mitr_cavalier_lacrosse.git"
+  },
+  "keywords": [
+    "cavalier",
+    "lacrosse"
+  ],
+  "author": "Sebastian Castillo-Sanchez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Issac-Kim/mitr_cavalier_lacrosse/issues"
+  },
+  "homepage": "https://github.com/Issac-Kim/mitr_cavalier_lacrosse#readme"
+}
