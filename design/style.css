@@ -1,0 +1,65 @@
+/* Home Page */
+/* navbar */
+html,body{
+    width: 100%;
+}
+.navbar{
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+}
+#over-background{
+    color: white;
+}
+.jumbotron{
+    top: 0px;
+    padding: 0;
+    z-index: -1;
+}
+.photogallery{
+    padding: 0;
+}
+.nav-link{
+    text-decoration: none;
+}
+.nav-link:link{
+    color: white;
+}
+.nav-link:visited {
+    color: white;
+}
+.nav-link:hover {
+    color: SeaGreen;
+    border-bottom: 1px solid Black;
+}
+.col-lg{
+    text-align: center;
+}
+.info-col{
+    border: 3px solid white;
+    border-radius: 8px;
+    margin: 2em;
+}
+.image_center{
+    margin: auto;
+    margin-top: 3em;
+}
+
+/* Design for team program information */
+.row{
+    display: flex;
+}
+.col-sm{
+    flex: 1;
+}
+.team-card{
+    background-color: #FF8C00;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin: 1em;
+}
+.team-card-text{
+    background-color: white;
+    height: 100%;
+    
+}
