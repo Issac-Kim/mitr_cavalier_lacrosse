@@ -7,6 +7,7 @@ const dotenv = require('dotenv');
 
 //My Routes
 const authRoute = require('./routes/auth');
+const playerRoute = require('./routes/createPlayer');
 
 //Setup enviroment variables
 dotenv.config();
@@ -20,6 +21,7 @@ mongoose.connect(
  
 app.use(express.json());
 app.use('/api/user', authRoute);
+app.use('/api/player', playerRoute);
 
 
 
