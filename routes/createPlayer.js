@@ -14,6 +14,7 @@ router.post('/create-player', async (req, res) => {
   const player = new Player ({
     name: req.body.name,
     email: req.body.email,
+    position: req.body.position,
     team: req.body.team
   });
 
