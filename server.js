@@ -23,7 +23,7 @@ mongoose.connect(
 app.use(express.json());
 app.use('/api/user', authRoute);
 app.use('/api/player', playerRoute);
-app.use('/api/photo', photoRoute);
+//app.use('/api/photo', photoRoute);
 
 
 
