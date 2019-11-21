@@ -15,10 +15,10 @@ router.post('/create-player', async (req, res) => {
 
   //create player
   const player = new Player ({
-    name: req.body.name,
-    number: req.body.number,
+    name: req.body.playerName,
+    number: req.body.playerNumber,
     position: req.body.position,
-    teamName: req.body.team
+    teamName: req.body.teamName
   });
 
   //save player to db
