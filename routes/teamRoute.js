@@ -14,7 +14,6 @@ router.post('/create-team', async (req, res) => {
   var _tournaments = req.body.tournaments.filter(function(a) { return a.trim() != ''; });
   var _tryouts = req.body.tryouts.filter(function(a) { return a.trim() != ''; });
 
-<<<<<<< HEAD
   //Add players
   var players = [];
   for (var i=0; i<req.body.number.length; i++) {
@@ -28,8 +27,6 @@ router.post('/create-team', async (req, res) => {
       players.push(jsonObj);
     }
   }
-=======
->>>>>>> 9d181a47892c7b4eae362ec4125077ff18ca5c8c
 
   const team = new Team ({
     year: req.body.year.trim(),
@@ -119,20 +116,22 @@ router.get('/get-team-by-id/:id', async (req, res) => {
   res.send(team);
 });
 
-router.post('/upload/:id', upload.array('photo', 20), (req, res) => {
+router.post('/upload/:id', upload.array('photo', 20), async (req, res) => {
   var photos = "";
-  console.log(req.body);
-  console.log(req.files);
+  //console.log(req.body);
+  //console.log(req.files);
   console.log(req.params.id);
   if(req.files) {
     for (i = 0; i < req.files.length; i++) {
-      Team.update(
-        {"_id": req.params.id},
-        {"$push": {"images": req.files[i]}}
+      await Team.findOneAndUpdate(
+        {_id: req.params.id},
+        {$push: {images: req.files[i]}}
       );
+      console.log(req.files[i]);
       photos += "<img src='/"+ req.files[i].path + "'>"
     }
     res.send(photos);
+
   } else throw err;
 });
  
