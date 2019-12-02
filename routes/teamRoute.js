@@ -77,7 +77,8 @@ router.get('/team-page/:id', async (req, res) => {
     location: team.location,
     fees: team.fees,
     other: team.other,
-    roster: team.roster
+    roster: team.roster,
+    images: team.images
   });
 });
 

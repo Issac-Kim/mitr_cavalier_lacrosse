@@ -1,7 +1,9 @@
 <body>
     <h1> {{gender}} {{year}} </h1>
 
-    <p> Need to insert team photo slideshow </p>
+    {{#each images}}
+    <img src="/{{this.path}}" style="width:30%">
+    {{/each}}
 
     <h3> About </h3>
     {{#unless about }}
