@@ -117,21 +117,14 @@ router.get('/get-team-by-id/:id', async (req, res) => {
 });
 
 router.post('/upload/:id', upload.array('photo', 20), async (req, res) => {
-  var photos = "";
-  //console.log(req.body);
-  //console.log(req.files);
-  console.log(req.params.id);
   if(req.files) {
     for (i = 0; i < req.files.length; i++) {
       await Team.findOneAndUpdate(
         {_id: req.params.id},
         {$push: {images: req.files[i]}}
       );
-      console.log(req.files[i]);
-      photos += "<img src='/"+ req.files[i].path + "'>"
     }
-    res.send(photos);
-
+    res.redirect('/');
   } else throw err;
 });
  
