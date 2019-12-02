@@ -33,8 +33,14 @@ mongoose.connect(
  
 //Setup body parsing
 app.use(express.json());
+<<<<<<< HEAD
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+=======
+app.use('/api/user', authRoute);
+app.use('/api/player', playerRoute);
+//app.use('/api/photo', photoRoute);
+>>>>>>> 5862293866fcc405fd8164051261bf0a2df6aad5
 
 //Session Setup
 app.use(cookieParser());
