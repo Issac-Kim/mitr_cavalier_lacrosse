@@ -1,8 +1,34 @@
 /* Home Page */
 /* navbar */
+
+@font-face {
+  font-family: 'Blockletter';
+  src: url("resources/fonts/Blockletter.otf") format("opentype");
+}
+@font-face {
+  font-family: 'Play';
+  src: url("resources/fonts/Play-Regular.ttf") format("truetype");
+}
+
 html,body{
     width: 100%;
 }
+
+body{
+  background-color: #E1D4C0;
+  font-family: 'Play', sans-serif;
+}
+
+.fullscreen{
+  min-height: 95vh;
+  max-height: 95vh;
+  height: 95vh;
+  width: 100vw;
+  min-width: 100vw;
+  max-width: 100vw;
+  margin-top: 5vh;
+}
+
 .navbar{
     position: fixed;
     z-index: 2;
@@ -55,18 +81,34 @@ html,body{
 .col-sm{
     flex: 1;
 }
+
+
+/* ORANGE: #FF8C00; */
+
+.team-card-div{
+  width: 70vw;
+  margin-left: 15vw;
+  margin-right: 15vw;
+}
+
 .team-card{
-    background-color: #FF8C00;
+    background-color: white;
     padding-top: 1em;
     padding-bottom: 1em;
     margin: 1em;
-    border-radius: 0.75em;
 }
 .team-card-text{
     background-color: white;
     height: 100%;
     padding: 0.5em;
-    border-radius: 0.5em;
+}
+.team-card-text h3, .team-card-text span{
+  text-align: center;
+  display: block;
+}
+.team-card-text span{
+  padding-top: 10px;
+    border-top: solid black 1px;
 }
 
 .team-card-title{
@@ -160,3 +202,29 @@ html,body{
   }
 
   /* sign up information */ 
+
+
+
+
+/* HEADERS */
+h1{
+  font-family: 'Blockletter';
+  font-size: 5em;
+  letter-spacing: 0.075em;
+  word-spacing: 0.3em;
+  line-height: 15vh;
+  height: inherit;
+}
+
+
+/*banner*/
+.cav_title{
+  background-color: #154890;
+  color: white;
+  height: 15vh;
+  line-height: 15vh;
+  margin-bottom: 3vh;
+}
+.cav_title_1{
+  height: inherit;
+}
