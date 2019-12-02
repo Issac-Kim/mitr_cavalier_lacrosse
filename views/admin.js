@@ -13,6 +13,7 @@ function addField(arrName, elementId){
 function populateOnload(){
     populateAccountDropDown();
     populateTeamDropDown();
+    populatePhotoDropDown();
 }
 
 function addRosterRow(table){
@@ -63,6 +64,28 @@ function populateAccountDropDown(){
                 select.appendChild(text);
 
                 var element = document.getElementById("team-account-drop-down");
+                element.appendChild(select);
+            });
+        }, error: function(msg) {
+            alert("There was a problem: " + msg.status + " " + msg.statusText);
+        }
+    });
+}
+
+function populatePhotoDropDown(){
+    $.ajax({
+        type: "GET",
+        url: "/api/team/get-teams",
+        dataType: "json",
+        success: function(responseData, status){
+            //Loops through each project in the responseData 
+            $.each(responseData, function(i, team) {
+                var select = document.createElement("option");
+                select.value = team._id;
+                var text = document.createTextNode(team.gender + ' ' + team.year);
+                select.appendChild(text);
+
+                var element = document.getElementById("upload-photo-select");
                 element.appendChild(select);
             });
         }, error: function(msg) {
@@ -158,6 +181,17 @@ function editTeamForm(id){
             alert("There was a problem: " + msg.status + " " + msg.statusText);
         }
     });
+}
+
+function uploadPhotoForm(id) {
+    console.log(id);
+    var photoForm = "";
+    photoForm += '<br><form enctype="multipart/form-data" method="post" action="/api/team/upload/' + id + '">';
+    photoForm += '<label>Upload Photo(s)</label><br>';
+    photoForm += '<input class="form-control-file" type="file" accept="image/*" name="photo" multiple>'
+    photoForm += '<br><button type="submit">Save</button>'
+    photoForm += '</form>'
+    document.getElementById("upload-photo-form").innerHTML = photoForm;
 }
 
 function validateTeamForm () {
