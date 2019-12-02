@@ -1,0 +1,113 @@
+<html>
+
+    <!-- NEED FORM VALIDATION -->
+
+    <body onload="populateOnload()">
+        <h1> Create Team Account </h1>
+        <p> Account to control a specific teams page. </p>
+        <form role="form" method="post" action="/api/user/create-user">
+            <label>Username: </label> <input type="text" name="username"> <br>
+            <label>Password: </label> <input type="password" name="password"> <br>
+            <Label>Privilege: </label> 
+                <input type="radio" name="admin" value="true"> Admin
+                <input type="radio" name="admin" value="false" checked> Coach <br>
+
+            {{# if error }}
+                <section> {{ error }} </section>
+            {{/if}}
+            <button type="submit">Create</button>
+        </form>
+        
+        <h1> Add Team </h1>
+
+        <form name="addTeamForm" onsubmit="return validateTeamForm()" role="form" method="post" action="/api/team/create-team">
+            <label>Team Type</label>
+            <select name="gender">
+                <option value="Boys">Boys</option>
+                <option value="Girls">Girls</option>
+                <option value="Mens">Mens</option>
+            </select>
+            <br>
+
+            <label>Year/Name</label>
+            <input type="text" name="year">
+            <br>
+
+            <label>Team Account: </label>
+            <select id="team-account-drop-down" name="owner">  </select>
+            <br>
+
+
+            <label>About</label><br>
+            <textarea name="about" rows="8" cols="100"> </textarea>
+            <br>
+
+            <label>Coaches</label><br>
+            <div id="coaches-form">
+                <input type="text" name="coaches[]"> 
+                <span onclick="addField('coaches', 'coaches-form')"> + </span>
+                <br>
+            </div>
+            <br>
+
+            <label>Tournaments</label><br>
+            <div id="tournaments-form">
+                <input type="text" name="tournaments[]"> 
+                <span onclick="addField('tournaments', 'tournaments-form')"> + </span>
+                <br>
+            </div>
+            <br>
+
+            <label>Tryouts</label><br>
+            <div id="tryouts-form">
+                <input type="text" name="tryouts[]"> 
+                <span onclick="addField('tryouts', 'tryouts-form')"> + </span>
+                <br>
+            </div>
+            <br>
+
+            <label>Location</label>
+            <input type="text" name="location">
+            <br>
+
+            <label>Fees</label><br>
+            <textarea name="fees" rows="4" cols="50"> </textarea>
+            <br>
+
+            <label>Other</label><br>
+            <textarea name="other" rows="8" cols="100"> </textarea>
+            <br>
+
+            <label>Roster</label><br>
+            <table border="1">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Postion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type ="text" name="number"></td>
+                    <td><input type ="text" name="first"></td>
+                    <td><input type ="text" name="last"></td>
+                    <td><input type ="text" name="position"></td>
+                </tr>
+            </tbody>
+            </table>
+
+            <button type="submit">Save</button>
+        </form>
+
+        <h1> Edit Team </h1>
+
+        <label> Select Team: </label> 
+        <select id="edit-team-select" onclick="editTeamForm(this.value)">  </select>
+        <div id="edit-team-form">  </div>
+
+        <script src="/views/admin.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </body>
+</html>

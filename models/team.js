@@ -2,18 +2,40 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var teamSchema = new Schema({
-    teamName: {
+    year: {
         type: String,
         required: true
     },
-    password: {
+    gender: {
         type: String,
         required: true
     },
     owner: {
-        id: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         required: true
+    },
+    about: {
+        type: String
+    },
+    coaches: [{
+        type: String
+    }],
+    tournaments: [{
+        type: String
+    }],
+    tryouts: [{
+        type: String
+    }],
+    location: {
+        type: String
+    },
+    fees: {
+        type: String
+    },
+    other: {
+        type: String
     }
+    
 });
 
 module.exports = mongoose.model('Team', teamSchema);

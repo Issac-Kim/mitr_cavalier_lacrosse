@@ -15,7 +15,7 @@ var playerSchema = new Schema ({
         required: true
     },
     teamName: {
-        id: Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         required: true
     }
 });
