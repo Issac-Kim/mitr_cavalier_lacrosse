@@ -34,6 +34,9 @@ var teamSchema = new Schema({
     },
     other: {
         type: String
+    },
+    roster: {
+        type: Array
     }
     
 });

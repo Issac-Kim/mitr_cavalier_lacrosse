@@ -15,6 +15,18 @@ function populateOnload(){
     populateTeamDropDown();
 }
 
+function addRosterRow(table){
+    var htmlStr ="";
+    htmlStr += "<tr>";
+    htmlStr += '<td><input type ="text" name="number[]"></td>';
+    htmlStr += '<td><input type ="text" name="first[]"></td>';
+    htmlStr += '<td><input type ="text" name="last[]"></td>';
+    htmlStr += '<td><input type ="text" name="position[]"></td>';
+    htmlStr == '</tr>';
+
+    document.getElementById(table).insertAdjacentHTML('beforeend',htmlStr);
+}
+
 function populateTeamDropDown(){
     $.ajax({
         type: "GET",
@@ -121,6 +133,23 @@ function editTeamForm(id){
             htmlStr += '<textarea name="other" rows="8" cols="100">' + team.other + '</textarea>';
             htmlStr += '<br>';
 
+            htmlStr += '<label>Roster</label><br>';
+            htmlStr += '<span onclick="addRosterRow(\'edit-roster-table\')"> Click to add rows + </span>';
+
+            htmlStr += '<table border="1">';
+            htmlStr += '<thead> <tr> <th>#</th><th>First Name</th><th>Last Name</th><th>Postion</th></tr></thead>';
+            htmlStr += '<tbody id="edit-roster-table">'
+            $.each(team.roster, function(i, player){
+                htmlStr += '<tr>';
+                htmlStr += '<td><input type ="text" name="number[]" value="' + player.Number + '"></td>';
+                htmlStr += '<td><input type ="text" name="first[]" value="' + player.firstName + '"></td>';
+                htmlStr += '<td><input type ="text" name="last[]" value="' + player.lastName + '"></td>';
+                htmlStr += '<td><input type ="text" name="position[]" value="' + player.position + '"></td>';
+                htmlStr += '</tr>'
+            });
+            htmlStr += '</tbody>';
+            htmlStr+= '</table>';
+
             htmlStr += '<button type="submit">Save</button>';
             htmlStr += '</form>'
 
@@ -132,8 +161,8 @@ function editTeamForm(id){
 }
 
 function validateTeamForm () {
-    var x = document.forms["addTeamForm"]["year"].value;
-    if (x == "") {
+    var year = document.forms["addTeamForm"]["year"].value;
+    if (year == "") {
         alert("Year/Name must be filled out");
         return false;
     }

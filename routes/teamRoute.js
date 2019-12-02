@@ -11,6 +11,20 @@ router.post('/create-team', async (req, res) => {
   var _tournamets = req.body.tournaments.filter(function(a) { return a.trim() != ''; });
   var _tryouts = req.body.tryouts.filter(function(a) { return a.trim() != ''; });
 
+  //Add players
+  var players = [];
+  for (var i=0; i<req.body.number.length; i++) {
+    var jsonObj = { 
+      "Number": req.body.number[i].trim(), 
+      "firstName": req.body.first[i].trim(), 
+      "lastName": req.body.last[i].trim(),
+      "position": req.body.position[i].trim()
+    }
+    if(jsonObj.Number != "" || jsonObj.firstName != "" || jsonObj.lastName != "" || jsonObj.position != "") {
+      players.push(jsonObj);
+    }
+  }
+
   const team = new Team ({
     year: req.body.year.trim(),
     gender: req.body.gender.trim(),
@@ -21,7 +35,8 @@ router.post('/create-team', async (req, res) => {
     tryouts: _tryouts,
     location: req.body.location.trim(),
     fees: req.body.fees.trim(),
-    other: req.body.other.trim()
+    other: req.body.other.trim(),
+    roster: players
   });
 
   try{
@@ -56,7 +71,8 @@ router.get('/team-page/:id', async (req, res) => {
     tryouts: team.tryouts,
     location: team.location,
     fees: team.fees,
-    other: team.other
+    other: team.other,
+    roster: team.roster
   });
 });
 
@@ -65,6 +81,21 @@ router.post('/update-team-by-id/:id', async (req, res) => {
   req.body.coaches = req.body.coaches.filter(function(a) { return a.trim() != ''; });
   req.body.tournaments = req.body.tournaments.filter(function(a) { return a.trim() != ''; });
   req.body.tryouts = req.body.tryouts.filter(function(a) { return a.trim() != ''; });
+
+  var players = [];
+  for (var i=0; i<req.body.number.length; i++) {
+    var jsonObj = { 
+      "Number": req.body.number[i].trim(), 
+      "firstName": req.body.first[i].trim(), 
+      "lastName": req.body.last[i].trim(),
+      "position": req.body.position[i].trim()
+    }
+    if(jsonObj.Number != "" || jsonObj.firstName != "" || jsonObj.lastName != "" || jsonObj.position != "") {
+      players.push(jsonObj);
+    }
+  }
+
+  req.body.roster = players;
 
   try{
     const team = await Team.updateOne({ _id: req.params.id }, req.body);
