@@ -1,6 +1,9 @@
 const router = require("express").Router();
 const bodyParser = require("body-parser");
 const Team = require("../models/team.js");
+const multer = require("multer");
+const fs = require("fs");
+const upload = multer({dest: './photos/'});
 
 
 
@@ -8,8 +11,9 @@ const Team = require("../models/team.js");
 router.post('/create-team', async (req, res) => {
   //remove blank data
   var _coaches = req.body.coaches.filter(function(a) { return a.trim() != ''; });
-  var _tournamets = req.body.tournaments.filter(function(a) { return a.trim() != ''; });
+  var _tournaments = req.body.tournaments.filter(function(a) { return a.trim() != ''; });
   var _tryouts = req.body.tryouts.filter(function(a) { return a.trim() != ''; });
+
 
   const team = new Team ({
     year: req.body.year.trim(),
@@ -17,15 +21,17 @@ router.post('/create-team', async (req, res) => {
     owner: req.body.owner.trim(),
     about: req.body.about.trim(),
     coaches: _coaches,
-    tournaments: _tournamets,
+    tournaments: _tournaments,
     tryouts: _tryouts,
     location: req.body.location.trim(),
     fees: req.body.fees.trim(),
-    other: req.body.other.trim()
+    other: req.body.other.trim(),
+    images: new Array()
   });
 
   try{
     const newTeam = await team.save();
+
   } catch(error){
     res.status(400).send(error);
   }
@@ -78,6 +84,23 @@ router.post('/update-team-by-id/:id', async (req, res) => {
 router.get('/get-team-by-id/:id', async (req, res) => {
   const team = await Team.findOne({ _id: req.params.id });
   res.send(team);
+});
+
+router.post('/upload/:id', upload.array('photo', 20), (req, res) => {
+  var photos = "";
+  console.log(req.body);
+  console.log(req.files);
+  console.log(req.params.id);
+  if(req.files) {
+    for (i = 0; i < req.files.length; i++) {
+      Team.update(
+        {"_id": req.params.id},
+        {"$push": {"images": req.files[i]}}
+      );
+      photos += "<img src='/"+ req.files[i].path + "'>"
+    }
+    res.send(photos);
+  } else throw err;
 });
  
 module.exports = router;
