@@ -148,7 +148,7 @@ function editTeamForm(id){
             htmlStr += '<textarea class="form-control" name="other" rows="8" cols="100">' + team.other + '</textarea>';
             htmlStr += '<br>';
 
-            htmlStr += '<label>Roster</label><br>';
+            htmlStr += '<label>Roster</label>';
             htmlStr += '<button type="button" onclick="addRosterRow(\'edit-roster-table\')"> + </button>';
 
             htmlStr += '<table border="1">';
@@ -176,7 +176,6 @@ function editTeamForm(id){
 }
 
 function uploadPhotoForm(id) {
-    console.log(id);
     var photoForm = "";
     photoForm += '<br><form id="upload-photo-form" enctype="multipart/form-data" method="post" action="/api/team/upload/' + id + '">';
     photoForm += '<label>Upload Photo(s)</label><br>';
@@ -184,6 +183,16 @@ function uploadPhotoForm(id) {
     photoForm += '<br><button class="btn btn-primary" type="submit">Save</button>'
     photoForm += '</form>'
     document.getElementById("upload-photo-form").innerHTML = photoForm;
+}
+
+function uploadSitePhotoForm(page) {
+    var photoForm = "";
+    photoForm += '<br><form id="upload-site-photo-form" enctype="multipart/form-data" method="post" action="/api/photos/upload/' + page + '">';
+    photoForm += '<label>Upload Photo(s)</label><br>';
+    photoForm += '<input class="form-control-file" type="file" accept="image/*" name="photo" multiple>'
+    photoForm += '<br><button class="btn btn-primary" type="submit">Save</button>'
+    photoForm += '</form>'
+    document.getElementById("upload-site-photo-form").innerHTML = photoForm;
 }
 
 function validateTeamForm () {

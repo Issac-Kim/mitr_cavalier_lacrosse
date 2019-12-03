@@ -1,24 +1,43 @@
-<body>
-    <h1> Modify Team </h1>
-    <label> Select team to modify  </label> <select id="edit-team-select" onclick="editTeamForm(this.value)">
-        {{#each teams}}
-            <option value={{this._id}}> {{this.gender}} {{this.year}} </li>
-        {{/each}}
-    </select>
 
-    <div id="edit-team-form">  </div>
+<html>
+    <head>
+        <title>Cavalier Lacrosse: Admin Panel</title>
+       <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+        <link href="/design/admin.css" rel="stylesheet"/>
+    </head>
 
-    <h1>Upload Team Photos</h1>
-    <label> Select team to modify  </label> <select id="upload-photo-select" onclick="uploadPhotoForm(this.value)">  
-        {{#each teams}}
-            <option value={{this._id}}> {{this.gender}} {{this.year}} </li>
-        {{/each}}  
-    </select>
+    <!-- TODO: Issac add styling -->
 
-    <div id="upload-photo-form">  </div>
+    <body>
+        <div id="navbar"></div>
 
-    <script src="/design/navbar.js"></script>
-    <script src="/design/adminstyle.js"></script>
-    <script src="/design/admin.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-</body>
+        <div class="container" id="admin-panel">
+
+            <h1> Modify Team </h1>
+            <label> Select team to modify  </label> <select id="edit-team-select" onclick="editTeamForm(this.value)">
+                {{#each teams}}
+                    <option value={{this._id}}> {{this.gender}} {{this.year}} </li>
+                {{/each}}
+            </select>
+
+            <div id="edit-team-form">  </div>
+
+            <h1>Upload Team Photos</h1>
+            <label> Select team to modify  </label> <select id="upload-photo-select" onclick="uploadPhotoForm(this.value)">  
+                {{#each teams}}
+                    <option value={{this._id}}> {{this.gender}} {{this.year}} </li>
+                {{/each}}  
+            </select>
+
+            <div id="upload-photo-form">  </div>
+
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="/design/admin.js"></script>
+        <script src="/design/adminstyle.js"></script>
+        <script src="/design/navbar.js"></script>
+    </body>
+</html>
+
