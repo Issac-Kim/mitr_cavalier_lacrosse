@@ -1,13 +1,11 @@
 function addField(arrName, elementId){
     var input = document.createElement("input");
+    input.className = "form-control";
     input.type = "text";
     input.name = arrName + "[]";
 
-    var brk = document.createElement("br");
-
     var element = document.getElementById(elementId);
     element.appendChild(input);
-    element.appendChild(brk);
 }
 
 function populateOnload(){
@@ -103,61 +101,55 @@ function editTeamForm(id){
             //Loops through each project in the responseData 
             var htmlStr = ""
             htmlStr += '<form id="edit-team-form" role="form" method="post" action="/api/team/update-team-by-id/' + id + '">'
+            
             htmlStr += '<label>About</label><br>';
-
-            htmlStr += '<textarea name="about" rows="8" cols="100">' + team.about +' </textarea>';
+            htmlStr += '<textarea class="form-control" name="about" rows="8" cols="100">' + team.about +' </textarea>';
             htmlStr += '<br>';
             
-            htmlStr += '<label>Coaches</label><br>';
+            htmlStr += '<label>Coaches</label>';
+            htmlStr += '<button type="button" onclick="addField(\'coaches\', \'edit-coaches-form\')"> + </button> <br>';
             htmlStr += '<div id="edit-coaches-form">';
-            htmlStr += '<input type="text" name="coaches[]">'
-            htmlStr += '<span onclick="addField(\'coaches\', \'edit-coaches-form\')"> + </span> <br>'
             $.each(team.coaches, function(i, coach) {
-                // need to add the plus
-                htmlStr += '<input type="text" name="coaches[]" value="' + coach + '">';
-                htmlStr += '<br>'
+                htmlStr += '<input class="form-control" type="text" name="coaches[]" value="' + coach + '">';
             });
+            htmlStr += '<input class="form-control" type="text" name="coaches[]">';
             htmlStr += '</div>';
             htmlStr += '<br>';
 
-            htmlStr += '<label>Tournaments</label><br>'
+            htmlStr += '<label>Tournaments</label>';
+            htmlStr += '<button type="button" onclick="addField(\'tournaments\', \'edit-tournaments-form\')"> + </button> <br>';
             htmlStr += '<div id="edit-tournaments-form">';
-            htmlStr += '<input type="text" name="tournaments[]">'
-            htmlStr += '<span onclick="addField(\'tournaments\', \'edit-tournaments-form\')"> + </span> <br>'
             $.each(team.tournaments, function(i, tournament) {
-                // need to add the plus
-                htmlStr += '<input type="text" name="tournaments[]" value="' + tournament + '">';
-                htmlStr += '<br>'
+                htmlStr += '<input class="form-control" type="text" name="tournaments[]" value="' + tournament + '">';
             });
+            htmlStr += '<input class="form-control" type="text" name="tournaments[]">'
             htmlStr += '</div>';
             htmlStr += '<br>';
 
-            htmlStr += '<label>Tryouts</label><br>'
+            htmlStr += '<label>Tryouts</label>';
+            htmlStr += '<button type="button" onclick="addField(\'Tryouts\', \'edit-tryouts-form\')"> + </button> <br>';
             htmlStr += '<div id="edit-tryouts-form">';
-            htmlStr += '<input type="text" name="tryouts[]">'
-            htmlStr += '<span onclick="addField(\'tryouts\', \'edit-tryouts-form\')"> + </span> <br>'
             $.each(team.tryouts, function(i, tryout) {
-                // need to add the plus
-                htmlStr += '<input type="text" name="tryouts[]" value="' + tryout + '">';
-                htmlStr += '<br>'
+                htmlStr += '<input class="form-control" type="text" name="tryouts[]" value="' + tryout + '">';
             });
+            htmlStr += '<input class="form-control" type="text" name="tryouts[]">'
             htmlStr += '</div>';
             htmlStr += '<br>';
 
             htmlStr += '<label>Location</label>';
-            htmlStr += '<input type="text" name="location" value="' + team.location + '">';
+            htmlStr += '<input class="form-control" type="text" name="location" value="' + team.location + '">';
             htmlStr += '<br>';
 
             htmlStr += '<label>Fees</label><br>';
-            htmlStr += '<textarea name="fees" rows="4" cols="50">' + team.fees + '</textarea>';
+            htmlStr += '<textarea class="form-control" name="fees" rows="4" cols="50">' + team.fees + '</textarea>';
             htmlStr += '<br>';
 
             htmlStr += '<label>Other</label><br>';
-            htmlStr += '<textarea name="other" rows="8" cols="100">' + team.other + '</textarea>';
+            htmlStr += '<textarea class="form-control" name="other" rows="8" cols="100">' + team.other + '</textarea>';
             htmlStr += '<br>';
 
             htmlStr += '<label>Roster</label><br>';
-            htmlStr += '<span onclick="addRosterRow(\'edit-roster-table\')"> Click to add rows + </span>';
+            htmlStr += '<button type="button" onclick="addRosterRow(\'edit-roster-table\')"> + </button>';
 
             htmlStr += '<table border="1">';
             htmlStr += '<thead> <tr> <th>#</th><th>First Name</th><th>Last Name</th><th>Postion</th></tr></thead>';
@@ -171,9 +163,9 @@ function editTeamForm(id){
                 htmlStr += '</tr>'
             });
             htmlStr += '</tbody>';
-            htmlStr+= '</table>';
+            htmlStr += '</table> <br>';
 
-            htmlStr += '<button type="submit">Save</button>';
+            htmlStr += '<button class="btn btn-primary" type="submit">Save</button>';
             htmlStr += '</form>'
 
             document.getElementById("edit-team-form").innerHTML = htmlStr;
@@ -186,10 +178,10 @@ function editTeamForm(id){
 function uploadPhotoForm(id) {
     console.log(id);
     var photoForm = "";
-    photoForm += '<br><form enctype="multipart/form-data" method="post" action="/api/team/upload/' + id + '">';
+    photoForm += '<br><form id="upload-photo-form" enctype="multipart/form-data" method="post" action="/api/team/upload/' + id + '">';
     photoForm += '<label>Upload Photo(s)</label><br>';
     photoForm += '<input class="form-control-file" type="file" accept="image/*" name="photo" multiple>'
-    photoForm += '<br><button type="submit">Save</button>'
+    photoForm += '<br><button class="btn btn-primary" type="submit">Save</button>'
     photoForm += '</form>'
     document.getElementById("upload-photo-form").innerHTML = photoForm;
 }

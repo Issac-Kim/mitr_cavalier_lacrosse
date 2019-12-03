@@ -108,6 +108,8 @@
             </div>
         </nav>
 
+        <!-- End Navbar -->
+
         <div class="container" id="admin-panel">
             <div class="row chooser">
                 <div class="col-sm active" id="create-team-btn">
@@ -128,7 +130,7 @@
                     <h1> Create Team Account </h1>
                     <hr>
                     <p> Account to control a specific teams page. </p>
-                    <form role="form" method="post" action="/api/user/create-user">
+                    <form id="create-user-form" role="form" method="post" action="/api/user/create-user">
                         <div class="form-group">
                             <label for="username">Username: </label> <input class="form-control" type="text" name="username"> <br>
                             <label for="password">Password: </label> <input class="form-control" type="password" name="password"> <br>
@@ -173,26 +175,24 @@
                             <textarea class="form-control" name="about" rows="8" cols="100"> </textarea>
                             <br>
             
-                            <label>Coaches</label><br>
+                            <label>Coaches</label>
+                            <button type="button" onclick="addField('coaches', 'coaches-form')"> + </button> <br>
                             <div id="coaches-form">
                                 <input class="form-control" type="text" name="coaches[]"> 
-                                <span onclick="addField('coaches', 'coaches-form')"> + </span>
-                                <br>
                             </div>
                             <br>
             
-                            <label>Tournaments</label><br>
+                            <label>Tournaments</label>
+                            <button type="button" onclick="addField('tournaments', 'tournaments-form')"> + </button> <br>
                             <div id="tournaments-form">
                                 <input class="form-control" type="text" name="tournaments[]"> 
-                                <span onclick="addField('tournaments', 'tournaments-form')"> + </span>
-                                <br>
                             </div>
                             <br>
             
-                            <label>Tryouts</label><br>
+                            <label>Tryouts</label>
+                            <button type="button" onclick="addField('Tryouts', 'tryouts-form')"> + </button> <br>
                             <div id="tryouts-form">
-                                <input class="form-control" type="text" name="tryouts[]"> 
-                                <span onclick="addField('tryouts', 'tryouts-form')"> + </span>
+                                <input class="form-control" type="text" name="tryouts[]">
                                 <br>
                             </div>
                             <br>
@@ -209,8 +209,8 @@
                             <textarea class="form-control" name="other" rows="8" cols="100"> </textarea>
                             <br>
             
-                            <label>Roster</label><br>
-                            <span onclick="addRosterRow('roster-table')"> Click to add rows + </span>
+                            <label>Roster</label>
+                            <button type="button" onclick="addRosterRow('roster-table')"> + </button>
                             <table border="1">
                             <thead>
                                 <tr>
@@ -247,7 +247,7 @@
                                 </tr>
                             </tbody>
                             </table>
-                            <br><br>
+                            <br>
                             <button class="btn btn-primary" type="submit">Save</button>
                         </div>
                         
@@ -269,7 +269,7 @@
                     <div class="form-group">
                             <h1>Upload Team Photos</h1>
                             <hr>
-                            <select class="form-control"id="upload-photo-select" onclick="uploadPhotoForm(this.value)">  </select>
+                            <select class="form-control" id="upload-photo-select" onclick="uploadPhotoForm(this.value)">  </select>
                             <div id="upload-photo-form">  </div>
                     </div>
          
