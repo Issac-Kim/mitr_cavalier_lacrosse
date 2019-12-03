@@ -9,13 +9,15 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const flash = require('req-flash');
+const multer = require('multer');
+const path = require('path');
 
 //My Routes
 const userRoute = require('./routes/userRoute');
 const teamRoute = require('./routes/teamRoute');
 const playerRoute = require('./routes/createPlayer');
 const adminRoute = require('./routes/adminRoute')
-const photoRoute = require('./routes/uploadPhoto');
+//const photoRoute = require('./routes/uploadPhoto');
 
 //Setup enviroment variables
 dotenv.config();
@@ -33,14 +35,8 @@ mongoose.connect(
  
 //Setup body parsing
 app.use(express.json());
-<<<<<<< HEAD
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-=======
-app.use('/api/user', authRoute);
-app.use('/api/player', playerRoute);
-//app.use('/api/photo', photoRoute);
->>>>>>> 5862293866fcc405fd8164051261bf0a2df6aad5
 
 //Session Setup
 app.use(cookieParser());
@@ -59,6 +55,7 @@ app.use('/admin', adminRoute);
 //app.use('/api/photo', photoRoute);
 
 app.use(express.static(__dirname));
+
 
 // Home view
 app.get('/', function (req, res) {

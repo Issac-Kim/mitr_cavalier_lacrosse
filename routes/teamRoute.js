@@ -1,6 +1,9 @@
 const router = require("express").Router();
 const bodyParser = require("body-parser");
 const Team = require("../models/team.js");
+const multer = require("multer");
+const fs = require("fs");
+const upload = multer({dest: './photos/'});
 
 
 
@@ -8,8 +11,22 @@ const Team = require("../models/team.js");
 router.post('/create-team', async (req, res) => {
   //remove blank data
   var _coaches = req.body.coaches.filter(function(a) { return a.trim() != ''; });
-  var _tournamets = req.body.tournaments.filter(function(a) { return a.trim() != ''; });
+  var _tournaments = req.body.tournaments.filter(function(a) { return a.trim() != ''; });
   var _tryouts = req.body.tryouts.filter(function(a) { return a.trim() != ''; });
+
+  //Add players
+  var players = [];
+  for (var i=0; i<req.body.number.length; i++) {
+    var jsonObj = { 
+      "Number": req.body.number[i].trim(), 
+      "firstName": req.body.first[i].trim(), 
+      "lastName": req.body.last[i].trim(),
+      "position": req.body.position[i].trim()
+    }
+    if(jsonObj.Number != "" || jsonObj.firstName != "" || jsonObj.lastName != "" || jsonObj.position != "") {
+      players.push(jsonObj);
+    }
+  }
 
   const team = new Team ({
     year: req.body.year.trim(),
@@ -17,15 +34,18 @@ router.post('/create-team', async (req, res) => {
     owner: req.body.owner.trim(),
     about: req.body.about.trim(),
     coaches: _coaches,
-    tournaments: _tournamets,
+    tournaments: _tournaments,
     tryouts: _tryouts,
     location: req.body.location.trim(),
     fees: req.body.fees.trim(),
-    other: req.body.other.trim()
+    other: req.body.other.trim(),
+    roster: players,
+    images: new Array()
   });
 
   try{
     const newTeam = await team.save();
+
   } catch(error){
     res.status(400).send(error);
   }
@@ -56,7 +76,9 @@ router.get('/team-page/:id', async (req, res) => {
     tryouts: team.tryouts,
     location: team.location,
     fees: team.fees,
-    other: team.other
+    other: team.other,
+    roster: team.roster,
+    images: team.images
   });
 });
 
@@ -65,6 +87,21 @@ router.post('/update-team-by-id/:id', async (req, res) => {
   req.body.coaches = req.body.coaches.filter(function(a) { return a.trim() != ''; });
   req.body.tournaments = req.body.tournaments.filter(function(a) { return a.trim() != ''; });
   req.body.tryouts = req.body.tryouts.filter(function(a) { return a.trim() != ''; });
+
+  var players = [];
+  for (var i=0; i<req.body.number.length; i++) {
+    var jsonObj = { 
+      "Number": req.body.number[i].trim(), 
+      "firstName": req.body.first[i].trim(), 
+      "lastName": req.body.last[i].trim(),
+      "position": req.body.position[i].trim()
+    }
+    if(jsonObj.Number != "" || jsonObj.firstName != "" || jsonObj.lastName != "" || jsonObj.position != "") {
+      players.push(jsonObj);
+    }
+  }
+
+  req.body.roster = players;
 
   try{
     const team = await Team.updateOne({ _id: req.params.id }, req.body);
@@ -78,6 +115,18 @@ router.post('/update-team-by-id/:id', async (req, res) => {
 router.get('/get-team-by-id/:id', async (req, res) => {
   const team = await Team.findOne({ _id: req.params.id });
   res.send(team);
+});
+
+router.post('/upload/:id', upload.array('photo', 20), async (req, res) => {
+  if(req.files) {
+    for (i = 0; i < req.files.length; i++) {
+      await Team.findOneAndUpdate(
+        {_id: req.params.id},
+        {$push: {images: req.files[i]}}
+      );
+    }
+    res.redirect('/');
+  } else throw err;
 });
  
 module.exports = router;

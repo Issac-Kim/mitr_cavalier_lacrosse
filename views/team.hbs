@@ -9,7 +9,9 @@
     <body>
     <h1> {{gender}} {{year}} </h1>
 
-    <p> Need to insert team photo slideshow </p>
+    {{#each images}}
+    <img src="/{{this.path}}" style="width:30%">
+    {{/each}}
 
     <h3> About </h3>
     {{#unless about }}
@@ -65,7 +67,25 @@
 
 
     <h3> Roster: </h3>
-    <p> Need to insert roster and stats table. </p>
+    <table border="1">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Postion</th>
+        </tr>
+    </thead>
+    <tbody>
+    {{#each roster}}
+       <tr>
+            <td> {{this.Number}} </td>
+            <td> {{this.firstName}} </td>
+            <td> {{this.lastName}} </td>
+            <td> {{this.position}} </td>
+       </tr>
+    {{/each}}
+    </tbody>
 
 </body>
 
