@@ -1,0 +1,82 @@
+<body>
+    <h1> {{gender}} {{year}} </h1>
+
+    {{#each images}}
+    <img src="/{{this.path}}" style="width:30%">
+    {{/each}}
+
+    <h3> About </h3>
+    {{#unless about }}
+        <p> No about information has been posted yet. </p>
+    {{/unless}}
+    <p> {{about}} </p>
+
+
+    <h3> Coaches </h3>
+    {{#unless coaches }}
+        <p> No coaches information has been posted yet. </p>
+    {{/unless}}
+    <ul>
+        {{#each coaches}}
+            <li> {{this}} </li>
+        {{/each}}
+    </ul>
+
+    <h3> Tournaments </h3>
+    {{#unless tournaments }}
+        <p> No tournaments information has been posted yet. </p>
+    {{/unless}}
+    <ul>
+        {{#each tournaments}}
+            <li> {{this}} </li>
+        {{/each}}
+    </ul>
+
+    <h3> Tryouts </h3>
+    {{#unless tryouts }}
+        <p> No tryout information has been posted yet. </p>
+    {{/unless}}
+    <ul>
+        {{#each tryouts}}
+            <li> {{this}} </li>
+        {{/each}}
+    </ul>
+
+    <h3> Location </h3>
+    {{#unless location }}
+        <p> No location information has been posted yet. </p>
+    {{/unless}}
+    <p> {{location}} </p>
+
+    <h3> Fees </h3>
+    {{#unless fees }}
+        <p> No fee information has been posted yet. </p>
+    {{/unless}}
+    <p> {{fees}} </p>
+
+    <h3> Other Information</h3>
+    <p> {{other}} </p>
+
+
+    <h3> Roster: </h3>
+    <table border="1">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Postion</th>
+        </tr>
+    </thead>
+    <tbody>
+    {{#each roster}}
+       <tr>
+            <td> {{this.Number}} </td>
+            <td> {{this.firstName}} </td>
+            <td> {{this.lastName}} </td>
+            <td> {{this.position}} </td>
+       </tr>
+    {{/each}}
+    </tbody>
+
+</body>

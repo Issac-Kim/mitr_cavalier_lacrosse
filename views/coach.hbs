@@ -1,0 +1,22 @@
+<body>
+    <h1> Modify Team </h1>
+    <label> Select team to modify  </label> <select id="edit-team-select" onclick="editTeamForm(this.value)">
+        {{#each teams}}
+            <option value={{this._id}}> {{this.gender}} {{this.year}} </li>
+        {{/each}}
+    </select>
+
+    <div id="edit-team-form">  </div>
+
+    <h1>Upload Team Photos</h1>
+    <label> Select team to modify  </label> <select id="upload-photo-select" onclick="uploadPhotoForm(this.value)">  
+        {{#each teams}}
+            <option value={{this._id}}> {{this.gender}} {{this.year}} </li>
+        {{/each}}  
+    </select>
+
+    <div id="upload-photo-form">  </div>
+
+    <script src="/views/admin.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</body>

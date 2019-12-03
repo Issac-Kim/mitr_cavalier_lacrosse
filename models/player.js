@@ -6,16 +6,16 @@ var playerSchema = new Schema ({
         type: String,
         required: true
     },
-    email: {
+    number: {
         type: String,
-        required: false
+        required: true
     }, 
     position: {
         type: String,
         required: true
     },
     teamName: {
-        id: Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         required: true
     }
 });

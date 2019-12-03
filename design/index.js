@@ -15,7 +15,50 @@ $(".photo").click(function(){
 });
 
 
-    
+function updateMenu(){
+    $.ajax({
+        type: "GET",
+        url: "api/team/get-teams",
+        dataType: "json",
+        success: function(responseData, status){
+            //Loops through each project in the responseData 
+            $.each(responseData, function(i, team) {
+                var link = document.createElement("a");
+                link.className = "dropdown-item";
+                link.href = "/api/team/team-page/" + team._id;
+                var text = document.createTextNode(team.gender + ' ' + team.year);
+                link.appendChild(text);
+
+                var element;
+                if(team.gender == "Boys"){
+                    element = document.getElementById("youth-boys");
+                } else if (team.gender == "Girls") {
+                    element = document.getElementById("youth-girls");
+                } else if (team.gender == "Mens") {
+                    element = document.getElementById("mens");
+                }
+
+                element.appendChild(link);
+                
+                //Need to stop last divider
+                var div = document.createElement("div");
+                div.className = "dropdown-divider";
+                element.appendChild(div);
+            });
+        }, error: function(msg) {
+            alert("There was a problem: " + msg.status + " " + msg.statusText);
+        }
+    });
+}
+
+
+
+
+
+
+
+
+// Don't think we need this calendar
 // calendar stuff
 var date = new Date();
 var d = date.getDate();
