@@ -252,13 +252,13 @@ h1{
 
 .teams_header{
   text-align: center;
-  background-color: #FF6600;
+  background-color: #154890;
   color: white;
   height: 18vh;
   line-height: 15vh;
   margin-bottom: 3vh;
-  margin-top: 5vh;
-  border-bottom: 20px solid #154890;/*
+  margin-top: 0vh;
+  border-bottom: 20px solid #FF6600;/*
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: black;*/
 }
@@ -270,7 +270,6 @@ h1{
 .teams_body h3{
   color: #FF6600;
   display: block;
-  border-bottom: 1px solid black;
 }
 .teams_section{
   background-color: white;
@@ -287,6 +286,8 @@ h1{
   background-color: #154890;
   color: white;
   padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .cardbox{
   padding: 20px
