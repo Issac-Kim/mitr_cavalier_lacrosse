@@ -47,3 +47,13 @@ html,body{
     border: 1px solid #FF8C00;
     margin-bottom: 5em;
 }
+.form-control{
+    display: inline;
+}
+.btn-primary{
+    background-color: navy;
+}
+.title{
+    border-bottom: solid 1px black;
+    width: 100%;
+}

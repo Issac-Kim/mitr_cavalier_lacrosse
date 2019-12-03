@@ -126,140 +126,154 @@
             <div class="row form-content">
                 <div id="team-create" >
                     <h1> Create Team Account </h1>
+                    <hr>
                     <p> Account to control a specific teams page. </p>
                     <form role="form" method="post" action="/api/user/create-user">
-                        <label>Username: </label> <input type="text" name="username"> <br>
-                        <label>Password: </label> <input type="password" name="password"> <br>
-                        <Label>Privilege: </label> 
-                            <input type="radio" name="admin" value="true"> Admin
-                            <input type="radio" name="admin" value="false" checked> Coach <br>
-                        
-                        <!--
-                        {{# if error }}
-                            <section> {{ error }} </section>
-                        {{/if}}
-                        -->
-                        
-                        <button type="submit">Create</button>
+                        <div class="form-group">
+                            <label for="username">Username: </label> <input class="form-control" type="text" name="username"> <br>
+                            <label for="password">Password: </label> <input class="form-control" type="password" name="password"> <br>
+                            <Label for="Privilege">Privilege: </label> <br/>
+                                <input type="radio" name="admin" value="true"> Admin
+                                <input type="radio" name="admin" value="false" checked> Coach <br><br>
+                            
+                            <!--
+                            {{# if error }}
+                                <section> {{ error }} </section>
+                            {{/if}}
+                            -->
+                            
+                            <button class="btn btn-primary" type="submit">Create</button>
+                        </div>
+         
                     </form>
                 </div>
                 
                 <div id="add-team" class="hidden">
                     <h1> Add Team </h1>
-        
+                    <hr>
                     <form name="addTeamForm" onsubmit="return validateTeamForm()" role="form" method="post" action="/api/team/create-team">
-                        <label>Team Type</label>
-                        <select name="gender">
-                            <option value="Boys">Boys</option>
-                            <option value="Girls">Girls</option>
-                            <option value="Mens">Mens</option>
-                        </select>
-                        <br>
-        
-                        <label>Year/Name</label>
-                        <input type="text" name="year">
-                        <br>
-        
-                        <label>Team Account: </label>
-                        <select id="team-account-drop-down" name="owner">  </select>
-                        <br>
-        
-        
-                        <label>About</label><br>
-                        <textarea name="about" rows="8" cols="100"> </textarea>
-                        <br>
-        
-                        <label>Coaches</label><br>
-                        <div id="coaches-form">
-                            <input type="text" name="coaches[]"> 
-                            <span onclick="addField('coaches', 'coaches-form')"> + </span>
+                        <div class="form-group">
+                            <label>Team Type</label>
+                            <select class="form-control" name="gender">
+                                <option value="Boys">Boys</option>
+                                <option value="Girls">Girls</option>
+                                <option value="Mens">Mens</option>
+                            </select>
                             <br>
-                        </div>
-                        <br>
-        
-                        <label>Tournaments</label><br>
-                        <div id="tournaments-form">
-                            <input type="text" name="tournaments[]"> 
-                            <span onclick="addField('tournaments', 'tournaments-form')"> + </span>
+            
+                            <label>Year/Name</label>
+                            <input class="form-control" type="text" name="year">
                             <br>
-                        </div>
-                        <br>
-        
-                        <label>Tryouts</label><br>
-                        <div id="tryouts-form">
-                            <input type="text" name="tryouts[]"> 
-                            <span onclick="addField('tryouts', 'tryouts-form')"> + </span>
+            
+                            <label>Team Account: </label>
+                            <select class="form-control" id="team-account-drop-down" name="owner">  </select>
                             <br>
+            
+            
+                            <label>About</label><br>
+                            <textarea class="form-control" name="about" rows="8" cols="100"> </textarea>
+                            <br>
+            
+                            <label>Coaches</label><br>
+                            <div id="coaches-form">
+                                <input class="form-control" type="text" name="coaches[]"> 
+                                <span onclick="addField('coaches', 'coaches-form')"> + </span>
+                                <br>
+                            </div>
+                            <br>
+            
+                            <label>Tournaments</label><br>
+                            <div id="tournaments-form">
+                                <input class="form-control" type="text" name="tournaments[]"> 
+                                <span onclick="addField('tournaments', 'tournaments-form')"> + </span>
+                                <br>
+                            </div>
+                            <br>
+            
+                            <label>Tryouts</label><br>
+                            <div id="tryouts-form">
+                                <input class="form-control" type="text" name="tryouts[]"> 
+                                <span onclick="addField('tryouts', 'tryouts-form')"> + </span>
+                                <br>
+                            </div>
+                            <br>
+            
+                            <label>Location</label>
+                            <input class="form-control" type="text" name="location">
+                            <br>
+            
+                            <label>Fees</label><br>
+                            <textarea class="form-control" name="fees" rows="4" cols="50"> </textarea>
+                            <br>
+            
+                            <label>Other</label><br>
+                            <textarea class="form-control" name="other" rows="8" cols="100"> </textarea>
+                            <br>
+            
+                            <label>Roster</label><br>
+                            <span onclick="addRosterRow('roster-table')"> Click to add rows + </span>
+                            <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Postion</th>
+                                </tr>
+                            </thead>
+                            <tbody id="roster-table">
+                                <tr>
+                                    <td><input type ="text" name="number[]"></td>
+                                    <td><input type ="text" name="first[]"></td>
+                                    <td><input type ="text" name="last[]"></td>
+                                    <td><input type ="text" name="position[]"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type ="text" name="number[]"></td>
+                                    <td><input type ="text" name="first[]"></td>
+                                    <td><input type ="text" name="last[]"></td>
+                                    <td><input type ="text" name="position[]"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type ="text" name="number[]"></td>
+                                    <td><input type ="text" name="first[]"></td>
+                                    <td><input type ="text" name="last[]"></td>
+                                    <td><input type ="text" name="position[]"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type ="text" name="number[]"></td>
+                                    <td><input type ="text" name="first[]"></td>
+                                    <td><input type ="text" name="last[]"></td>
+                                    <td><input type ="text" name="position[]"></td>
+                                </tr>
+                            </tbody>
+                            </table>
+                            <br><br>
+                            <button class="btn btn-primary" type="submit">Save</button>
                         </div>
-                        <br>
-        
-                        <label>Location</label>
-                        <input type="text" name="location">
-                        <br>
-        
-                        <label>Fees</label><br>
-                        <textarea name="fees" rows="4" cols="50"> </textarea>
-                        <br>
-        
-                        <label>Other</label><br>
-                        <textarea name="other" rows="8" cols="100"> </textarea>
-                        <br>
-        
-                        <label>Roster</label><br>
-                        <span onclick="addRosterRow('roster-table')"> Click to add rows + </span>
-                        <table border="1">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Postion</th>
-                            </tr>
-                        </thead>
-                        <tbody id="roster-table">
-                            <tr>
-                                <td><input type ="text" name="number[]"></td>
-                                <td><input type ="text" name="first[]"></td>
-                                <td><input type ="text" name="last[]"></td>
-                                <td><input type ="text" name="position[]"></td>
-                            </tr>
-                            <tr>
-                                <td><input type ="text" name="number[]"></td>
-                                <td><input type ="text" name="first[]"></td>
-                                <td><input type ="text" name="last[]"></td>
-                                <td><input type ="text" name="position[]"></td>
-                            </tr>
-                            <tr>
-                                <td><input type ="text" name="number[]"></td>
-                                <td><input type ="text" name="first[]"></td>
-                                <td><input type ="text" name="last[]"></td>
-                                <td><input type ="text" name="position[]"></td>
-                            </tr>
-                            <tr>
-                                <td><input type ="text" name="number[]"></td>
-                                <td><input type ="text" name="first[]"></td>
-                                <td><input type ="text" name="last[]"></td>
-                                <td><input type ="text" name="position[]"></td>
-                            </tr>
-                        </tbody>
-                        </table>
-        
-                        <button type="submit">Save</button>
+                        
                     </form>
                 </div>
                 
                 <div id="edit-team" class="hidden">
                     <h1> Edit Team </h1>
+                    <hr>
+                    <div class="form-group">
+                        <label> Select Team: </label> 
+                        <select class="form-control" id="edit-team-select" onclick="editTeamForm(this.value)">  </select>
+                        <div id="edit-team-form">  </div>
+                    </div>
         
-                    <label> Select Team: </label> 
-                    <select id="edit-team-select" onclick="editTeamForm(this.value)">  </select>
-                    <div id="edit-team-form">  </div>
                 </div>
         
                 <div id="upload-photo" class="hidden">
-                    <h1>Upload Team Photos</h1>
-                    <select id="upload-photo-select" onclick="uploadPhotoForm(this.value)">  </select>
-                    <div id="upload-photo-form">  </div>
+                    <div class="form-group">
+                            <h1>Upload Team Photos</h1>
+                            <hr>
+                            <select class="form-control"id="upload-photo-select" onclick="uploadPhotoForm(this.value)">  </select>
+                            <div id="upload-photo-form">  </div>
+                    </div>
+         
                 </div>
             </div>
         </div>
