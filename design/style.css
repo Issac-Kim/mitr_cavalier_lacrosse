@@ -210,11 +210,7 @@ body{
 
 
 /* HEADERS */
-h1, h2, h3, h4{
-
-}
-
-
+h1, h2, h3, h4{}
 h1{
   font-family: 'Blockletter';
   font-size: 5em;
@@ -225,7 +221,7 @@ h1{
 }
 
 
-/*banner*/
+/* title banner [index] */
 .cav_title{
   text-align: center;
   background-color: #154890;
@@ -239,17 +235,20 @@ h1{
   height: inherit;
 }
 
+/* title "welcome to cavalier lacrosse" in photo slideshow [index] */
 .photo_title{
   margin-top: -90vh;/*
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: black;*/
 }
 
+/* navbar item spacing */
 .nav-item{
   margin-right: 5px;
   margin-left: 5px;
 }
 
+/* title banner [team] */
 .teams_header{
   text-align: center;
   background-color: #154890;
@@ -262,6 +261,8 @@ h1{
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: black;*/
 }
+
+/* general body blocks [team] */
 .teams_body{
   width: 70vw;
   margin-left: 15vw;
@@ -279,6 +280,8 @@ h1{
   margin-bottom: 20px;
 }
 
+
+/* cards (for coaches) [team] */
 .card{
   margin-left: 10px;
   margin-right: 10px;
@@ -292,6 +295,9 @@ h1{
 .cardbox{
   padding: 20px
 }
+
+
+/* lists [team] */
 .teams_body ul{
   background-color: #F5EDE3;
  
@@ -299,6 +305,7 @@ h1{
 }
 
 
+/* roster table [team] */
 .teams_body table{
   width: 65vw;
   text-align: center;

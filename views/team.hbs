@@ -87,17 +87,22 @@
                  </ul>
             </div>
         </nav>
+        <!-- end of navbar -->
 
 
-        <div id="home-content">
+<div id="home-content">
+    <!-- team name header -->
     <div class="teams_header"><h1 class=""> {{gender}}<img height="100px" src="/design/resources/pictures/cavs_logo_white.png"/>{{year}} </h1></div>
 
+
+    <!-- photo slideshow -->
     {{#each images}}
     <img src="/{{this.path}}" style="width:30%">
     {{/each}}
 
     <div class="teams_body">
 
+        <!-- about -->
         <div class="teams_section">
             <h3> About </h3>
             {{#unless about }}
@@ -106,6 +111,7 @@
             <p> {{about}} </p>
         </div>
 
+        <!-- coaches -->
         <div class="teams_section">
             <h3> Coaches </h3>
             {{#unless coaches }}
@@ -118,6 +124,7 @@
             </div>
         </div>
 
+        <!-- tournaments -->
         <div class="teams_section">
             <h3> Tournaments </h3>
             {{#unless tournaments }}
@@ -130,6 +137,7 @@
             </ul>
         </div>
 
+        <!-- tryouts -->
         <div class="teams_section">
             <h3> Tryouts </h3>
             {{#unless tryouts }}
@@ -142,6 +150,7 @@
             </ul>
         </div>
 
+        <!-- location -->
         <div class="teams_section">
             <h3> Location </h3>
             {{#unless location }}
@@ -150,6 +159,7 @@
             <p> {{location}} </p>
         </div>
 
+        <!-- fees -->
         <div class="teams_section">
             <h3> Fees </h3>
             {{#unless fees }}
@@ -158,12 +168,13 @@
             <p> {{fees}} </p>
         </div>
 
+        <!-- other -->
         <div class="teams_section">
             <h3> Other Information</h3>
             <p> {{other}} </p>
         </div>
 
-
+        <!-- roster -->
         <div class="teams_section">
             <h3> Roster: </h3>
             <table border="1">
@@ -175,6 +186,7 @@
                         <th>Postion</th>
                     </tr>
                 </thead>
+                
                 <tbody>
                 {{#each roster}}
                    <tr>
@@ -185,25 +197,26 @@
                    </tr>
                 {{/each}}
 
-
+                <!-- temp data to show what the table looks like -->
                     <tr>
-                        <td>1</td>
+                        <td>29</td>
                         <td>Justin</td>
                         <td>Bethel</td>
                         <td>DB</td>
                     </tr>
                     <tr>
-                        <td>2</td>
+                        <td>7</td>
                         <td>Jake</td>
                         <td>Bailey</td>
                         <td>P</td>
                     </tr>
                     <tr>
-                        <td>34</td>
+                        <td>12</td>
                         <td>Tom</td>
                         <td>Brady</td>
                         <td>QB</td>
                     </tr>
+
                 </tbody>
             </table>
         </div>
