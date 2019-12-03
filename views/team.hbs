@@ -6,10 +6,11 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="/design/navbar.js"></script>
+        <script src="/design/index.js"></script>
         <link href="/design/style.css" rel="stylesheet"/>
     </head>
 
-    <body>
+    <body onload="updateCarousel('{{id}}')">
         <!-- Navbar -->
         <div id="navbar"></div>
         <!-- end of navbar -->
@@ -21,9 +22,24 @@
 
 
     <!-- photo slideshow -->
-    {{#each images}}
-    <img src="/{{this.path}}" style="width:30%">
-    {{/each}}
+    <div class="container-fluid photogallery" >
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        
+            <div id="carousel-images" class="carousel-inner fullscreen"></div>
+
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+
+        </div>
+    </div>
+    <br>
+    
 
     <div class="teams_body">
 

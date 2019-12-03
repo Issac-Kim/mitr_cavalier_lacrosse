@@ -30,7 +30,6 @@ function updateMenu(){
                 link.href = "/api/team/team-page/" + team._id;
                 var text = document.createTextNode(team.gender + ' ' + team.year);
                 link.appendChild(text);
-                console.log(boysCount);
                 var element;
                 if(team.gender == "Boys"){
                     element = document.getElementById("youth-boys");

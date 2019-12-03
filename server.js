@@ -9,8 +9,6 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const flash = require('req-flash');
-const multer = require('multer');
-const path = require('path');
 
 //My Routes
 const userRoute = require('./routes/userRoute');
@@ -59,7 +57,7 @@ app.use(express.static(__dirname));
 
 // Home view
 app.get('/', function (req, res) {
-  res.render('index', {admin: req.session.admin});
+  res.render('index', {});
 });
 
 

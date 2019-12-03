@@ -78,7 +78,7 @@ router.get('/team-page/:id', async (req, res) => {
     fees: team.fees,
     other: team.other,
     roster: team.roster,
-    images: team.images
+    id: req.params.id
   });
 });
 
@@ -127,6 +127,11 @@ router.post('/upload/:id', upload.array('photo', 20), async (req, res) => {
     }
     res.redirect('/');
   } else throw err;
+});
+
+router.get('/get-teams-images/:id', async (req, res) => {
+  const team = await Team.findOne({ _id: req.params.id });
+  res.send(team.images)
 });
  
 module.exports = router;
