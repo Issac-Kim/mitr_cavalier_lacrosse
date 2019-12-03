@@ -24,7 +24,10 @@
                     Edit Teams
                 </div>
                 <div class="col-sm" id="upload-photo-btn">
-                    Upload Team Photos
+                    Manage Team Photos
+                </div>
+                <div class="col-sm" id="upload-site-photo-btn">
+                    Manage Site Photos
                 </div>
             </div>
             <div class="row form-content">
@@ -174,8 +177,20 @@
                             <select class="form-control" id="upload-photo-select" onclick="uploadPhotoForm(this.value)">  </select>
                             <div id="upload-photo-form">  </div>
                     </div>
-         
                 </div>
+
+                <div id="upload-site-photo" class="hidden">
+                    <div class="form-group">
+                            <h1>Upload Team Photos</h1>
+                            <hr>
+                            <select class="form-control" id="upload-site-photo-select" onclick="uploadSitePhotoForm(this.value)">  
+                                <option value="home"> Home Page </option>
+                                <option value="flyers"> Flyers </option>
+                            </select>
+                            <div id="upload-site-photo-form">  </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
         

@@ -15,7 +15,7 @@ const userRoute = require('./routes/userRoute');
 const teamRoute = require('./routes/teamRoute');
 const playerRoute = require('./routes/createPlayer');
 const adminRoute = require('./routes/adminRoute')
-//const photoRoute = require('./routes/uploadPhoto');
+const photoRoute = require('./routes/imageRoute');
 
 //Setup enviroment variables
 dotenv.config();
@@ -50,7 +50,7 @@ app.use('/api/user', userRoute);
 app.use('/api/team', teamRoute)
 app.use('/api/player', playerRoute);
 app.use('/admin', adminRoute);
-//app.use('/api/photo', photoRoute);
+app.use('/api/photos', photoRoute);
 
 app.use(express.static(__dirname));
 

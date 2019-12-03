@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const bodyParser = require("body-parser");
 const Team = require("../models/team.js");
 const multer = require("multer");
 const fs = require("fs");
