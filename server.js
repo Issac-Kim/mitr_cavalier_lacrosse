@@ -13,7 +13,6 @@ const flash = require('req-flash');
 //My Routes
 const userRoute = require('./routes/userRoute');
 const teamRoute = require('./routes/teamRoute');
-const playerRoute = require('./routes/createPlayer');
 const adminRoute = require('./routes/adminRoute')
 const photoRoute = require('./routes/imageRoute');
 
@@ -47,8 +46,7 @@ app.use(session({
 app.use(flash());
 
 app.use('/api/user', userRoute);
-app.use('/api/team', teamRoute)
-app.use('/api/player', playerRoute);
+app.use('/api/team', teamRoute);
 app.use('/admin', adminRoute);
 app.use('/api/photos', photoRoute);
 

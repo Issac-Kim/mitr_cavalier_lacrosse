@@ -108,6 +108,10 @@ $( document ).ready(function() {
                         <a class="nav-link" href="http://www.cavalierlacrosse.com/Store/Default.asp?menu=TAB:20350&org=Cavalierlacrosse.com"> Store </a>
                     </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://www.cavalierlacrosse.com/Registration/Default.asp?n=68011&org=Cavalierlacrosse.com""> Register </a>
+                    </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         US Lacrosse
