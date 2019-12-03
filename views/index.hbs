@@ -5,10 +5,11 @@
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
         <link href="/design/style.css" rel="stylesheet"/>
     </head>
+    
     <body onload="updateMenu()">
         <!-- Navbar -->
         <nav class="navbar navbar-expand" id="over-background">
-            <a class="navbar-brand" href="#"><img height="50em" src="/design/resources/pictures/cavs_logo_transparent.jpg"/></a>
+            <a class="navbar-brand" href="#"><img height="50em" src="/design/resources/pictures/cavs_logo_white.png"/></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -39,9 +40,15 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             
                             <div id="mens"></div>
-                            
                         </div>
                     </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pictures</a>
+                    </li>
+                    
+                </ul>
+                 <ul class="nav navbar-nav navbar-right">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Store
@@ -56,9 +63,6 @@
                             </div>
                             
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pictures</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -77,10 +81,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="api/user/login">Settings</a>
                     </li>
-                </ul>
+                 </ul>
             </div>
         </nav>
+        <!-- end of navbar -->
 
+        <!-- photo slideshow -->
         <!-- Hold the headline background image at the top of the the page -->
         <div class="container-fluid photogallery" >
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -89,11 +95,11 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
-            <div class="carousel-inner">
+            <div class="carousel-inner fullscreen">
                 <div class="carousel-item active">
                     <img class="d-block w-100" src="/design/resources/pictures/1.jpg" alt="First slide">
                     <div class="carousel-caption d-none d-md-block">
-                        <h1> Welcome to Cavalier Lacrosse </h1>
+                        <h1 class="photo_title"> Welcome to <br>Cavalier Lacrosse </h1>
                         <p>...</p>
                     </div>
                 </div>
@@ -122,20 +128,27 @@
             </a>
             </div>
         </div>
-        <div class="container" id="home-content">
-            <div class="row">
-                <div class="col-lg">
+        <!-- end of photo slideshow -->
+
+
+        <div class="container fullscreen" id="home-content">
+
+            <!-- title banner -->
+            <div class="row cav_title">
+                <div class="col-lg cav_title_1">
                     <h1>Cavalier Lacrosse</h1>
                 </div>
             </div>
-            <div class="row">
+
+            <!-- cards with team info -->
+            <div class="row team-card-div">
                 <div class="shadow-lg p-3 mb-5 col-sm team-card">
                     <div class="team-card-text">
                         <h3 class="team-card-title">Youth</h3>
                         <p>
                                 Provide players with a highly competitive club/travel team experience to prepare our players to be high performing high school lacrosse stars.  Our coaching staff has D1 playing experience AND youth coaching experience.  
                         </p>
-                        <a href="#" class="team-link">View Our Youth Teams</a>
+                        <span><a href="#" class="team-link">View Our Youth Teams</a></span>
                     </div>
                 </div>
                 <div class="shadow-lg p-3 mb-5 col-sm team-card">
@@ -144,7 +157,7 @@
                         <p>
                                 Prepare our players to play in college. All players will receive instruction from former college lacrosse players and current high school coaches.   Our coaching staff is unrivaled, featuring former UVA standouts who truly understand the college recruiting process. Our coaches have a vast network of contacts throughout major college lacrosse programs.
                         </p>
-                        <a href="#" class="team-link">View Our High School Teams</a>
+                        <span><a href="#" class="team-link">View Our High School Teams</a></span>
                     </div>
                 </div>
                 <div class="shadow-lg p-3 mb-5 col-sm team-card">
@@ -153,7 +166,7 @@
                         <p>
                                 Feature a collection of former college and pro all-stars combined with Cav Alunmi.  Our philosophy is to provide a platform for Cav players to play with a Cav team from "cradle to grave".  We have both Mens Elite (18+) and Masters (32+) teams that play in both field/outdoor and box/indoor leagues. 
                         </p>
-                        <a href="#" class="team-link">View Our Men's Teams</a>
+                        <span><a href="#" class="team-link">View Our Men's Teams</a></span>
                     </div>
                 </div>
               </div>

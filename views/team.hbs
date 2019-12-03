@@ -1,82 +1,227 @@
-<body>
-    <h1> {{gender}} {{year}} </h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cavalier Lacrosse</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="/design/navbar.js"></script>
+        <link href="/design/style.css" rel="stylesheet"/>
+    </head>
 
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand" id="over-background">
+            <a class="navbar-brand" href="#"><img height="50em" src="/design/resources/pictures/cavs_logo_white.png"/></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Boys </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                            <div id="youth-boys"></div>
+                            
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Girls </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            
+                            <div id="youth-girls"></div>
+                        
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Mens </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            
+                            <div id="mens"></div>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pictures</a>
+                    </li>
+                    
+                </ul>
+                 <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Store
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div id="store">
+                                <a class="dropdown-item" href="#">Boys</a>
+                            
+                                <div class="dropdown-divider"></div>
+                            
+                                <a class="dropdown-item" href="#">Boys</a>
+                            </div>
+                            
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        US Lacrosse
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://www.uslaxmagazine.com/?utm_source=LA_navigation">USLaxMagazine</a>  
+                            <a class="dropdown-item" href="http://www.uslacrosse.org/membership.aspx?utm_source=LA_navigation">Membership</a>     
+                            <a class="dropdown-item" href=""></a>
+                            <a class="dropdown-item" href=""></a>
+                            <a class="dropdown-item" href=""></a>
+                            <a class="dropdown-item" href=""></a>
+                            <a class="dropdown-item" href=""></a>                
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="api/user/login">Settings</a>
+                    </li>
+                 </ul>
+            </div>
+        </nav>
+        <!-- end of navbar -->
+
+
+<div id="home-content">
+    <!-- team name header -->
+    <div class="teams_header"><h1 class=""> {{gender}}<img height="100px" src="/design/resources/pictures/cavs_logo_white.png"/>{{year}} </h1></div>
+
+
+    <!-- photo slideshow -->
     {{#each images}}
     <img src="/{{this.path}}" style="width:30%">
     {{/each}}
 
-    <h3> About </h3>
-    {{#unless about }}
-        <p> No about information has been posted yet. </p>
-    {{/unless}}
-    <p> {{about}} </p>
+    <div class="teams_body">
 
+        <!-- about -->
+        <div class="teams_section">
+            <h3> About </h3>
+            {{#unless about }}
+                <p> No about information has been posted yet. </p>
+            {{/unless}}
+            <p> {{about}} </p>
+        </div>
 
-    <h3> Coaches </h3>
-    {{#unless coaches }}
-        <p> No coaches information has been posted yet. </p>
-    {{/unless}}
-    <ul>
-        {{#each coaches}}
-            <li> {{this}} </li>
-        {{/each}}
-    </ul>
+        <!-- coaches -->
+        <div class="teams_section">
+            <h3> Coaches </h3>
+            {{#unless coaches }}
+                <p> No coaches information has been posted yet. </p>
+            {{/unless}}
+            <div class="row cardbox">
+                {{#each coaches}}
+                    <div class="col card"> {{this}} </div>
+                {{/each}}
+            </div>
+        </div>
 
-    <h3> Tournaments </h3>
-    {{#unless tournaments }}
-        <p> No tournaments information has been posted yet. </p>
-    {{/unless}}
-    <ul>
-        {{#each tournaments}}
-            <li> {{this}} </li>
-        {{/each}}
-    </ul>
+        <!-- tournaments -->
+        <div class="teams_section">
+            <h3> Tournaments </h3>
+            {{#unless tournaments }}
+                <p> No tournaments information has been posted yet. </p>
+            {{/unless}}
+            <ul>
+                {{#each tournaments}}
+                    <li> {{this}} </li>
+                {{/each}}
+            </ul>
+        </div>
 
-    <h3> Tryouts </h3>
-    {{#unless tryouts }}
-        <p> No tryout information has been posted yet. </p>
-    {{/unless}}
-    <ul>
-        {{#each tryouts}}
-            <li> {{this}} </li>
-        {{/each}}
-    </ul>
+        <!-- tryouts -->
+        <div class="teams_section">
+            <h3> Tryouts </h3>
+            {{#unless tryouts }}
+                <p> No tryout information has been posted yet. </p>
+            {{/unless}}
+            <ul>
+                {{#each tryouts}}
+                    <li> {{this}} </li>
+                {{/each}}
+            </ul>
+        </div>
 
-    <h3> Location </h3>
-    {{#unless location }}
-        <p> No location information has been posted yet. </p>
-    {{/unless}}
-    <p> {{location}} </p>
+        <!-- location -->
+        <div class="teams_section">
+            <h3> Location </h3>
+            {{#unless location }}
+                <p> No location information has been posted yet. </p>
+            {{/unless}}
+            <p> {{location}} </p>
+        </div>
 
-    <h3> Fees </h3>
-    {{#unless fees }}
-        <p> No fee information has been posted yet. </p>
-    {{/unless}}
-    <p> {{fees}} </p>
+        <!-- fees -->
+        <div class="teams_section">
+            <h3> Fees </h3>
+            {{#unless fees }}
+                <p> No fee information has been posted yet. </p>
+            {{/unless}}
+            <p> {{fees}} </p>
+        </div>
 
-    <h3> Other Information</h3>
-    <p> {{other}} </p>
+        <!-- other -->
+        <div class="teams_section">
+            <h3> Other Information</h3>
+            <p> {{other}} </p>
+        </div>
 
+        <!-- roster -->
+        <div class="teams_section">
+            <h3> Roster: </h3>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Postion</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                {{#each roster}}
+                   <tr>
+                        <td class="num_td"> {{this.Number}} </td>
+                        <td class="name_td"> {{this.firstName}} </td>
+                        <td class="name_td"> {{this.lastName}} </td>
+                        <td class="num_td"> {{this.position}} </td>
+                   </tr>
+                {{/each}}
 
-    <h3> Roster: </h3>
-    <table border="1">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Postion</th>
-        </tr>
-    </thead>
-    <tbody>
-    {{#each roster}}
-       <tr>
-            <td> {{this.Number}} </td>
-            <td> {{this.firstName}} </td>
-            <td> {{this.lastName}} </td>
-            <td> {{this.position}} </td>
-       </tr>
-    {{/each}}
-    </tbody>
+                <!-- temp data to show what the table looks like -->
+                    <tr>
+                        <td>29</td>
+                        <td>Justin</td>
+                        <td>Bethel</td>
+                        <td>DB</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Jake</td>
+                        <td>Bailey</td>
+                        <td>P</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Tom</td>
+                        <td>Brady</td>
+                        <td>QB</td>
+                    </tr>
 
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 </body>
+
+</html>
