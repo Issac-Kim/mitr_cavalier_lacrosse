@@ -11,9 +11,18 @@ html,body{
 #over-background{
     color: white;
 }
+#reg-navbar{
+    color: white;
+    background-color: black;
+}
 .jumbotron{
     top: 0px;
     padding: 0;
+    z-index: -1;
+}
+#gallery{
+    top: 0px;
+    padding-top: 5em;
     z-index: -1;
 }
 .photogallery{
@@ -160,3 +169,6 @@ html,body{
   }
 
   /* sign up information */ 
+.upload{
+    padding-bottom: 5em;
+}

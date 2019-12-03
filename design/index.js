@@ -10,6 +10,10 @@ $(document).scroll(function(){
     }
 });
 
+$(".photo").click(function(){
+    console.log("hi");
+});
+
 
     
 // calendar stuff
