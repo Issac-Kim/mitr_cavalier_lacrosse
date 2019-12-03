@@ -38,6 +38,7 @@ body{
 }
 #over-background{
     color: white;
+    transition: 0.5s;
 }
 .jumbotron{
     top: 0px;
@@ -209,6 +210,11 @@ body{
 
 
 /* HEADERS */
+h1, h2, h3, h4{
+
+}
+
+
 h1{
   font-family: 'Blockletter';
   font-size: 5em;
@@ -221,6 +227,7 @@ h1{
 
 /*banner*/
 .cav_title{
+  text-align: center;
   background-color: #154890;
   color: white;
   height: 15vh;
@@ -233,9 +240,9 @@ h1{
 }
 
 .photo_title{
-  margin-top: -90vh;
+  margin-top: -90vh;/*
   -webkit-text-stroke-width: 3px;
-  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-color: black;*/
 }
 
 .nav-item{
@@ -245,5 +252,67 @@ h1{
 
 .teams_header{
   text-align: center;
-  margin-top: 8vh;
+  background-color: #FF6600;
+  color: white;
+  height: 18vh;
+  line-height: 15vh;
+  margin-bottom: 3vh;
+  margin-top: 5vh;
+  border-bottom: 20px solid #154890;/*
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;*/
+}
+.teams_body{
+  width: 70vw;
+  margin-left: 15vw;
+  margin-right: 15vw;
+}
+.teams_body h3{
+  color: #FF6600;
+  display: block;
+  border-bottom: 1px solid black;
+}
+.teams_section{
+  background-color: white;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 20px;
+}
+
+.card{
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 0;
+  background-color: #154890;
+  color: white;
+  padding: 5px;
+}
+.cardbox{
+  padding: 20px
+}
+.teams_body ul{
+  background-color: #F5EDE3;
+ 
+  display: block;
+}
+
+
+.teams_body table{
+  width: 65vw;
+  text-align: center;
+  border: 0;
+  background-color: #E1D4C0;
+}
+.teams_body td, .teams_body th {
+  border: 1px solid #CDBFAC;
+  padding: 8px;
+  color: black;
+}
+.teams_body tr:nth-child(even) {
+  background-color: #F5EDE3;
+}
+
+.teams_body th {
+  background-color: #F5EDE3;
 }

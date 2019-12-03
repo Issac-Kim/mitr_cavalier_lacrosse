@@ -3,6 +3,9 @@
     <head>
         <title>Cavalier Lacrosse</title>
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="/design/navbar.js"></script>
         <link href="/design/style.css" rel="stylesheet"/>
     </head>
 
@@ -86,87 +89,126 @@
         </nav>
 
 
-
-    <h1 class="teams_header"> {{gender}} {{year}} </h1>
+        <div id="home-content">
+    <div class="teams_header"><h1 class=""> {{gender}} {{year}} </h1></div>
 
     {{#each images}}
     <img src="/{{this.path}}" style="width:30%">
     {{/each}}
 
-    <h3> About </h3>
-    {{#unless about }}
-        <p> No about information has been posted yet. </p>
-    {{/unless}}
-    <p> {{about}} </p>
+    <div class="teams_body">
+
+        <div class="teams_section">
+            <h3> About </h3>
+            {{#unless about }}
+                <p> No about information has been posted yet. </p>
+            {{/unless}}
+            <p> {{about}} </p>
+        </div>
+
+        <div class="teams_section">
+            <h3> Coaches </h3>
+            {{#unless coaches }}
+                <p> No coaches information has been posted yet. </p>
+            {{/unless}}
+            <div class="row cardbox">
+                {{#each coaches}}
+                    <div class="col card"> {{this}} </div>
+                {{/each}}
+            </div>
+        </div>
+
+        <div class="teams_section">
+            <h3> Tournaments </h3>
+            {{#unless tournaments }}
+                <p> No tournaments information has been posted yet. </p>
+            {{/unless}}
+            <ul>
+                {{#each tournaments}}
+                    <li> {{this}} </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="teams_section">
+            <h3> Tryouts </h3>
+            {{#unless tryouts }}
+                <p> No tryout information has been posted yet. </p>
+            {{/unless}}
+            <ul>
+                {{#each tryouts}}
+                    <li> {{this}} </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="teams_section">
+            <h3> Location </h3>
+            {{#unless location }}
+                <p> No location information has been posted yet. </p>
+            {{/unless}}
+            <p> {{location}} </p>
+        </div>
+
+        <div class="teams_section">
+            <h3> Fees </h3>
+            {{#unless fees }}
+                <p> No fee information has been posted yet. </p>
+            {{/unless}}
+            <p> {{fees}} </p>
+        </div>
+
+        <div class="teams_section">
+            <h3> Other Information</h3>
+            <p> {{other}} </p>
+        </div>
 
 
-    <h3> Coaches </h3>
-    {{#unless coaches }}
-        <p> No coaches information has been posted yet. </p>
-    {{/unless}}
-    <ul>
-        {{#each coaches}}
-            <li> {{this}} </li>
-        {{/each}}
-    </ul>
-
-    <h3> Tournaments </h3>
-    {{#unless tournaments }}
-        <p> No tournaments information has been posted yet. </p>
-    {{/unless}}
-    <ul>
-        {{#each tournaments}}
-            <li> {{this}} </li>
-        {{/each}}
-    </ul>
-
-    <h3> Tryouts </h3>
-    {{#unless tryouts }}
-        <p> No tryout information has been posted yet. </p>
-    {{/unless}}
-    <ul>
-        {{#each tryouts}}
-            <li> {{this}} </li>
-        {{/each}}
-    </ul>
-
-    <h3> Location </h3>
-    {{#unless location }}
-        <p> No location information has been posted yet. </p>
-    {{/unless}}
-    <p> {{location}} </p>
-
-    <h3> Fees </h3>
-    {{#unless fees }}
-        <p> No fee information has been posted yet. </p>
-    {{/unless}}
-    <p> {{fees}} </p>
-
-    <h3> Other Information</h3>
-    <p> {{other}} </p>
+        <div class="teams_section">
+            <h3> Roster: </h3>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Postion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{#each roster}}
+                   <tr>
+                        <td class="num_td"> {{this.Number}} </td>
+                        <td class="name_td"> {{this.firstName}} </td>
+                        <td class="name_td"> {{this.lastName}} </td>
+                        <td class="num_td"> {{this.position}} </td>
+                   </tr>
+                {{/each}}
 
 
-    <h3> Roster: </h3>
-    <table border="1">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Postion</th>
-        </tr>
-    </thead>
-    <tbody>
-    {{#each roster}}
-       <tr>
-            <td> {{this.Number}} </td>
-            <td> {{this.firstName}} </td>
-            <td> {{this.lastName}} </td>
-            <td> {{this.position}} </td>
-       </tr>
-    {{/each}}
-    </tbody>
-
+                    <tr>
+                        <td>1</td>
+                        <td>Justin</td>
+                        <td>Bethel</td>
+                        <td>DB</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Jake</td>
+                        <td>Bailey</td>
+                        <td>P</td>
+                    </tr>
+                    <tr>
+                        <td>34</td>
+                        <td>Tom</td>
+                        <td>Brady</td>
+                        <td>QB</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 </body>
 
 </html>
