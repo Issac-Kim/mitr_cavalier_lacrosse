@@ -67,7 +67,7 @@ body{
     color: white;
 }
 .nav-link:hover {
-    color: SeaGreen;
+    color: #FF6600;
     border-bottom: 1px solid Black;
 }
 .col-lg{
