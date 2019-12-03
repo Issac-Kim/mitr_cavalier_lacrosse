@@ -36,7 +36,7 @@ function loadCarousels() {
                 } else {
                     htmlStr +='<div class="carousel-item">';
                 }
-                htmlStr += '<img class="d-block w-100" src="/' + image.data.path + '" alt="First slide">';
+                htmlStr += '<img class="center" src="/' + image.data.path + '" alt="First slide">';
                 htmlStr += '</div>';
                 j++;
             });
@@ -61,7 +61,7 @@ function loadCarousels() {
                 } else {
                     htmlStr +='<div class="carousel-item">';
                 }
-                htmlStr += '<img class="d-block w-100" src="/' + image.data.path + '" alt="First slide">';
+                htmlStr += '<img class="flyer-img" src="/' + image.data.path + '" alt="First slide">';
                 htmlStr += '</div>';
                 j++;
             });

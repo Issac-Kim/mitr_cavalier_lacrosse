@@ -42,7 +42,7 @@ body{
 }
 #reg-navbar{
     color: white;
-    background-color: black;
+    background-color: navy;
 }
 .jumbotron{
     top: 0px;
@@ -334,4 +334,11 @@ h1{
 
 .teams_body th {
   background-color: #F5EDE3;
+}
+
+.flyer-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 75vh;
 }
