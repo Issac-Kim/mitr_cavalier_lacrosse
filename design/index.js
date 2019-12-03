@@ -29,14 +29,16 @@ function updatePageCarousel(page) {
         success: function(responseData, status){
             console.log(responseData);
             htmlStr = '';
+            var j=0;
             $.each(responseData, function(i, image) {
-                if(i==0) {
+                if(j==0) {
                     htmlStr += '<div class="carousel-item active">';
                 } else {
                     htmlStr +='<div class="carousel-item">';
                 }
                 htmlStr += '<img class="d-block w-100" src="/' + image.data.path + '" alt="First slide">';
                 htmlStr += '</div>';
+                j++;
             });
             console.log(htmlStr);
             document.getElementById("carousel-images").innerHTML = htmlStr;
