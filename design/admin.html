@@ -2,7 +2,7 @@
     <head>
         <title>Cavalier Lacrosse: Admin Panel</title>
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
-        <link href="admin.css" rel="stylesheet"/>
+        <link href="/design/admin.css" rel="stylesheet"/>
     </head>
     <!-- NEED FORM VALIDATION -->
 
@@ -10,7 +10,7 @@
 
         <!-- Navbar -->
         <nav class="navbar navbar-expand" id="reg-navbar">
-            <a class="navbar-brand" href="#"><img height="50em" src="resources/pictures/cavs_logo_transparent.jpg"/></a>
+            <a class="navbar-brand" href="#"><img height="50em" src="/design/resources/pictures/cavs_logo_transparent.jpg"/></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -136,12 +136,11 @@
                                 <input type="radio" name="admin" value="true"> Admin
                                 <input type="radio" name="admin" value="false" checked> Coach <br><br>
                             
-                            <!--
+                       
                             {{# if error }}
                                 <section> {{ error }} </section>
                             {{/if}}
-                            -->
-                            
+                         
                             <button class="btn btn-primary" type="submit">Create</button>
                         </div>
          
@@ -283,7 +282,7 @@
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="/views/admin.js"></script>
-        <script src="adminstyle.js"></script>
+        <script src="/design/adminstyle.js"></script>
         
     </body>
 </html>
