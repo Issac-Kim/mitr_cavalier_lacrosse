@@ -287,14 +287,18 @@ h2{
   text-align: center;
   background-color: #154890;
   color: white;
-  height: 18vh;
+  height: 15vh;
   line-height: 15vh;
-  margin-bottom: 3vh;
-  margin-top: 10vh;
-  border-bottom: 20px solid #FF6600;/*
+  margin-top: 10vh;/*
+  border-bottom: 10px solid #FF6600;*//*
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: black;*/
 }
+.teams_header_div{
+  background-color: #154890;
+  border-top: 1px solid #154890;
+}
+
 
 /* general body blocks [team] */
 .teams_body{
@@ -333,7 +337,6 @@ h2{
 
 /* lists [team] */
 .teams_body ul{
-  background-color: #F5EDE3;
 
   display: block;
 }
