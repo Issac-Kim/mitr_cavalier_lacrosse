@@ -57,7 +57,7 @@
                 <div id="add-team" class="hidden">
                     <h1> Add Team </h1>
                     <hr>
-                    <form name="addTeamForm" onsubmit="return validateTeamForm()" role="form" method="post" action="/api/team/create-team">
+                    <form id="add-team-form" name="addTeamForm" onsubmit="return validateTeamForm()" role="form" method="post" action="/api/team/create-team">
                         <div class="form-group">
                             <label>Team Type</label>
                             <select class="form-control" name="gender">
@@ -201,6 +201,18 @@
                                 <option value="flyers"> Flyers </option>
                             </select>
                             <div id="upload-site-photo-form">  </div>
+
+                            <h1>Remove Site Photos</h1>
+                            <hr>
+                            <label> Select Type: </label> 
+                            <select class="form-control" id="remove-site-photo-select" onclick="removeSitePhotoForm(this.value)">  
+                                <option value="general"> General </option>
+                                <option value="trophy"> Trophy </option>
+                                <option value="flyers"> Flyers </option>
+                            </select>
+                            <form id="remove-site-photo" role="form" method="post" action="/api/photos/delete-images">
+                                <div id="remove-site-photo-form"> </div>
+                            </form>
                     </div>
                 </div>
                 

@@ -89,3 +89,8 @@ td input{
     border: 0;
     background-color: transparent;
 }
+
+.img-thumbnail{
+    height: 200px;
+    width: 200px;
+}

@@ -33,7 +33,6 @@ function populateTeamDropDown(form){
         url: "/api/team/get-teams",
         dataType: "json",
         success: function(responseData, status){
-            //Loops through each project in the responseData 
             $.each(responseData, function(i, team) {
                 var select = document.createElement("option");
                 select.value = team._id;
@@ -55,7 +54,6 @@ function populateAccountDropDown(){
         url: "/api/user/get-all-users",
         dataType: "json",
         success: function(responseData, status){
-            //Loops through each project in the responseData 
             $.each(responseData, function(i, user) {
                 var select = document.createElement("option");
                 select.value = user._id;
@@ -76,8 +74,7 @@ function populatePhotoDropDown(){
         type: "GET",
         url: "/api/team/get-teams",
         dataType: "json",
-        success: function(responseData, status){
-            //Loops through each project in the responseData 
+        success: function(responseData, status){ 
             $.each(responseData, function(i, team) {
                 var select = document.createElement("option");
                 select.value = team._id;
@@ -99,7 +96,6 @@ function editTeamForm(id){
         url: "/api/team/get-team-by-id/" + id,
         dataType: "json",
         success: function(team, status){
-            //Loops through each project in the responseData 
             var htmlStr = ""
             htmlStr += '<form id="edit-team-form" role="form" method="post" action="/api/team/update-team-by-id/' + id + '">'
             
@@ -182,6 +178,27 @@ function logout(){
         url: "/api/user/logout",
         success: function(){
             window.location.assign('/');
+        }, error: function(msg) {
+            alert("There was a problem: " + msg.status + " " + msg.statusText);
+        }
+    });
+}
+
+function removeSitePhotoForm(type){
+    $.ajax({
+        type: "GET",
+        url: "/api/photos/get-images-by-type/" + type,
+        dataType: "json",
+        success: function(images, status){
+            var htmlStr = ""
+            
+            $.each(images, function(id, img) {
+                htmlStr += '<input type="checkbox" name="images[]" value="' + id + '"/>  <img src="/' + img.data.path + '" class="img-thumbnail" alt="Flyer  ">';
+            });
+            
+            htmlStr += '<br><button class="btn btn-danger" type="submit">Remove</button>'
+
+            document.getElementById("remove-site-photo-form").innerHTML = htmlStr;
         }, error: function(msg) {
             alert("There was a problem: " + msg.status + " " + msg.statusText);
         }

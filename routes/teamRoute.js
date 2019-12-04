@@ -61,6 +61,11 @@ router.post('/delete-team/', async (req, res) =>{
     files = team.images;
 
     var i = files.length;
+    if(i==0){
+      console.log('here');
+      await Team.deleteOne( { "_id" : req.body.id });
+      res.redirect('/');
+    }
     files.forEach(function(img){
       fs.unlink(img.path, function(err) {
         i--;
