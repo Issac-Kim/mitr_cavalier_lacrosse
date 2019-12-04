@@ -10,7 +10,8 @@ function addField(arrName, elementId){
 
 function populateOnload(){
     populateAccountDropDown();
-    populateTeamDropDown();
+    populateTeamDropDown("edit-team-select");
+    populateTeamDropDown("remove-team-select")
     populatePhotoDropDown();
 }
 
@@ -26,7 +27,7 @@ function addRosterRow(table){
     document.getElementById(table).insertAdjacentHTML('beforeend',htmlStr);
 }
 
-function populateTeamDropDown(){
+function populateTeamDropDown(form){
     $.ajax({
         type: "GET",
         url: "/api/team/get-teams",
@@ -39,7 +40,7 @@ function populateTeamDropDown(){
                 var text = document.createTextNode(team.gender + ' ' + team.year);
                 select.appendChild(text);
 
-                var element = document.getElementById("edit-team-select");
+                var element = document.getElementById(form);
                 element.appendChild(select);
             });
         }, error: function(msg) {
@@ -186,6 +187,8 @@ function logout(){
         }
     });
 }
+
+
 
 function uploadPhotoForm(id) {
     var photoForm = "";

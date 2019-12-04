@@ -21,7 +21,7 @@
                     Add Team 
                 </div>
                 <div class="col-sm" id="edit-team-btn">
-                    Edit Teams
+                    Manage Teams
                 </div>
                 <div class="col-sm" id="upload-photo-btn">
                     Manage Team Photos
@@ -167,6 +167,16 @@
                         <select class="form-control" id="edit-team-select" onclick="editTeamForm(this.value)">  </select>
                         <div id="edit-team-form">  </div>
                     </div>
+
+                    <h1> Remove Team </h1>
+                    <hr>
+                    <div class="form-group">
+                        <label> Select Team: </label> 
+                        <form action="/api/team/delete-team" method="post">
+                            <select class="form-control" id="remove-team-select" name="id">  </select>
+                            <button class="btn btn-danger" type="submit"> Remove </button>
+                        </form>
+                    </div>
         
                 </div>
         
@@ -197,7 +207,7 @@
             </div>
 
             <div>
-                <button class="btn btn-danger" type="submit" onclick="logout()"> Logout </button>
+                <button class="btn btn-outline-primary" type="submit" onclick="logout()"> Logout </button>
             </div>
         </div>
         

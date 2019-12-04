@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const Team = require("../models/team.js");
 const multer = require("multer");
-const fs = require("fs");
+const fs = require('fs');
 const upload = multer({dest: './photos/'});
 
 
@@ -52,13 +52,35 @@ router.post('/create-team', async (req, res) => {
   res.redirect('/');
 });
 
-router.post('/delete-team/:id', async (req, res) =>{
-  try{
-    await Team.remove({ _id: req.params.id });
+
+
+router.post('/delete-team/', async (req, res) =>{
+  try {
+    const team = await Team.findOne( { "_id" : req.body.id } );
+   
+    files = team.images;
+
+    var i = files.length;
+    files.forEach(function(img){
+      fs.unlink(img.path, function(err) {
+        i--;
+        if (err) {
+          res.status(400).send(error);
+        } else if (i <= 0) {
+          Team.deleteOne( { "_id" : req.body.id }, function (err) {
+            if(!err){
+              res.redirect('/');
+            } else {
+              res.status(400).send(error);
+            }
+          });
+        }
+      });
+    });
+    
   } catch(error) {
     res.status(400).send(error);
   }
-  res.redirect('/');
 });
 
 router.get('/get-teams', async (req, res) =>{
