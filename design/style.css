@@ -405,3 +405,8 @@ h2{
 .section-title-div{
   margin-top: 10vh;
 }
+
+.carousel-control-next,
+.carousel-control-prev {
+    filter: invert(100%);
+}
