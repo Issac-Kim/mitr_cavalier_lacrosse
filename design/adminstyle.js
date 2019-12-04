@@ -3,7 +3,7 @@ $("#create-team-btn").click(function(){
     $("#add-team-btn").removeClass("active");
     $("#edit-team-btn").removeClass("active");
     $("#upload-photo-btn").removeClass("active");
-    $("#upload-site-photo").removeClass("active");
+    $("#upload-site-photo-btn").removeClass("active");
 
     $("#team-create").removeClass("hidden");
     $("#add-team").addClass("hidden");
@@ -17,7 +17,7 @@ $("#add-team-btn").click(function(){
     $("#add-team-btn").addClass("active");
     $("#edit-team-btn").removeClass("active");
     $("#upload-photo-btn").removeClass("active");
-    $("#upload-site-photo").removeClass("active");
+    $("#upload-site-photo-btn").removeClass("active");
 
     $("#team-create").addClass("hidden");
     $("#add-team").removeClass("hidden");
@@ -31,7 +31,7 @@ $("#edit-team-btn").click(function(){
     $("#add-team-btn").removeClass("active");
     $("#edit-team-btn").addClass("active");
     $("#upload-photo-btn").removeClass("active");
-    $("#upload-site-photo").removeClass("active");
+    $("#upload-site-photo-btn").removeClass("active");
 
     $("#team-create").addClass("hidden");
     $("#add-team").addClass("hidden");
@@ -45,7 +45,7 @@ $("#upload-photo-btn").click(function(){
     $("#add-team-btn").removeClass("active");
     $("#edit-team-btn").removeClass("active");
     $("#upload-photo-btn").addClass("active");
-    $("#upload-site-photo").removeClass("active");
+    $("#upload-site-photo-btn").removeClass("active");
 
     $("#team-create").addClass("hidden");
     $("#add-team").addClass("hidden");
@@ -59,7 +59,7 @@ $("#upload-site-photo-btn").click(function(){
     $("#add-team-btn").removeClass("active");
     $("#edit-team-btn").removeClass("active");
     $("#upload-photo-btn").removeClass("active");
-    $("#upload-site-photo").addClass("active");
+    $("#upload-site-photo-btn").addClass("active");
 
     $("#team-create").addClass("hidden");
     $("#add-team").addClass("hidden");
