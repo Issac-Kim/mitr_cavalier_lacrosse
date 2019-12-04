@@ -136,6 +136,7 @@ body{
 .team-card-title{
     border-bottom: solid black 1px;
     padding-bottom: 0.5em;
+    color: #154890;
 }
 
 .register-info{
@@ -367,10 +368,10 @@ h2{
 
 
 .update{
-  background-color: #ffffff;
+  background-color: white;/*#ea4300;*/
   margin: 0;
-  color: black;
-  padding-bottom: 2em;
+  color: black;/*
+  padding-bottom: 2em;*/
   padding-top: 1em;/*
   border: 100px solid #154890;
   border-bottom: 50px;*/
@@ -378,4 +379,26 @@ h2{
 
 .container{
   padding: 0;
+}
+
+/*#header_img{
+  background-image: url("/resources/pictures/bg_cav-1-2.jpg");
+  background-size: 100vw auto;
+}*/
+
+#intro-text{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 40%;
+  color: white;
+}
+
+#intro-photo-div{
+  position: relative;
+}
+
+.section-title-div{
+  margin-top: 10vh;
 }
