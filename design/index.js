@@ -48,15 +48,7 @@ function loadCarousel(type) {
     });
 }
 
-function removePhotoUpdate(){
-    console.log("hi");
-    if($(this).hasClass("img-active")){
-        $(this).removeClass("img-active");
-    }else{
-        $(this).addClass("img-active");
-    }
 
-}
 
 function populatePictures(){
     $.ajax({
@@ -89,7 +81,7 @@ function populatePictures(){
         success: function(responseData, status){
             htmlStr = '<div class="row text-center text-lg-left">';
             $.each(responseData, function(i, image) {
-                htmlStr +=  '<div class="col-lg-3 col-md-4 col-6"><a href="#" class="d-block mb-4 h-100"><img class="img-fluid img-thumbnail" src="/' + image.data.path +'" alt=""></a></div>';
+                htmlStr +=  '<div class="col-lg-3 col-md-4 col-6"><div class="thumbnail-back"><img class="img-fluid img-thumb" src="/' + image.data.path +'" alt=""></div></div>';
 
             });
             htmlStr += '</div>'
