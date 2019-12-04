@@ -57,35 +57,16 @@ router.post('/create-team', async (req, res) => {
 router.post('/delete-team/', async (req, res) =>{
   try {
     const team = await Team.findOne( { "_id" : req.body.id } );
-   
     files = team.images;
-
-    var i = files.length;
-    if(i==0){
-      console.log('here');
-      await Team.deleteOne( { "_id" : req.body.id });
-      res.redirect('/');
+    for (i in files) {
+      await fs.unlink(files[i].path);
     }
-    files.forEach(function(img){
-      fs.unlink(img.path, function(err) {
-        i--;
-        if (err) {
-          res.status(400).send(error);
-        } else if (i <= 0) {
-          Team.deleteOne( { "_id" : req.body.id }, function (err) {
-            if(!err){
-              res.redirect('/');
-            } else {
-              res.status(400).send(error);
-            }
-          });
-        }
-      });
-    });
-    
+    await Team.deleteOne( { "_id" : req.body.id });  
   } catch(error) {
     res.status(400).send(error);
   }
+
+  res.redirect('/');
 });
 
 router.get('/get-teams', async (req, res) =>{
