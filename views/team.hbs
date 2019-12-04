@@ -60,11 +60,11 @@
             {{#unless coaches }}
                 <p> No coaches information has been posted yet. </p>
             {{/unless}}
-            <div class="row cardbox">
+            <ul>
                 {{#each coaches}}
-                    <div class="col card"> {{this}} </div>
+                    <li> {{this}} </li>
                 {{/each}}
-            </div>
+            </ul>
         </div>
 
         <!-- tournaments -->
