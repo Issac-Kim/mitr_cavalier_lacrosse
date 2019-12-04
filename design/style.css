@@ -55,7 +55,17 @@ body{
     z-index: -1;
 }
 .photogallery{
+  padding: 0;
+}
+.home-photo{
     padding: 0;
+    overflow: hidden;
+    margin: 0;
+}
+.home-photo img{
+
+  width: 100%;
+  margin: 0% 0 -30%;
 }
 .nav-link{
     text-decoration: none;
