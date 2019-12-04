@@ -175,6 +175,18 @@ function editTeamForm(id){
     });
 }
 
+function logout(){
+    $.ajax({
+        type: "POST",
+        url: "/api/user/logout",
+        success: function(){
+            window.location.assign('/');
+        }, error: function(msg) {
+            alert("There was a problem: " + msg.status + " " + msg.statusText);
+        }
+    });
+}
+
 function uploadPhotoForm(id) {
     var photoForm = "";
     photoForm += '<br><form id="upload-photo-form" enctype="multipart/form-data" method="post" action="/api/team/upload/' + id + '">';

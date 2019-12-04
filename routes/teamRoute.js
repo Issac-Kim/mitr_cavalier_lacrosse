@@ -52,6 +52,15 @@ router.post('/create-team', async (req, res) => {
   res.redirect('/');
 });
 
+router.post('/delete-team/:id', async (req, res) =>{
+  try{
+    await Team.remove({ _id: req.params.id });
+  } catch(error) {
+    res.status(400).send(error);
+  }
+  res.redirect('/');
+});
+
 router.get('/get-teams', async (req, res) =>{
   Team.find({}, function(err, teams) {
     var teamMap = {};

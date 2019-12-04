@@ -51,6 +51,12 @@ router.post('/login', async (req, res) => {
     }
 });
 
+router.post('/logout', (req, res) => {
+    req.session.user = null;
+    req.session.loginError = null;
+    res.send("logged out");
+});
+
 router.get('/get-all-users', (req, res) => {
     User.find({}, function(err, users) {
         var userMap = {};
