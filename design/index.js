@@ -11,7 +11,7 @@ function updateCarousel(id){
                 } else {
                     htmlStr +='<div class="carousel-item">';
                 }
-                htmlStr += '<img class="d-block w-100" src="/' + image.path + '" alt="First slide">';
+                htmlStr += '<img class="d-block w-100 carousel-img" src="/' + image.path + '" alt="First slide">';
                 htmlStr += '</div>';
             });
             document.getElementById("carousel-images").innerHTML = htmlStr;

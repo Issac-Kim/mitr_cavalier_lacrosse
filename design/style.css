@@ -31,6 +31,19 @@ body{
   overflow-x: hidden;
 }
 
+.carousel_size{
+  height: 85vh;
+  min-height: 85vh;
+  max-height: 85vh;
+  width: 100vw;
+  min-width: 100vw;
+  max-width: 100vw;
+  margin: 0;
+  overflow-x: hidden;
+  vertical-align: bottom;
+}
+
+
 .navbar{
     position: fixed;
     z-index: 2;
@@ -55,9 +68,9 @@ body{
     z-index: -1;
 }
 .photogallery{
-  padding: 0;
+  padding: 0;/*
   border-top: 10px solid #FF6600;
-  border-bottom: 10px solid #FF6600;
+  border-bottom: 10px solid #FF6600;*/
   margin-bottom: 0em;
 }
 .home-photo{
@@ -288,8 +301,8 @@ h2{
   background-color: #154890;
   color: white;
   height: 15vh;
-  line-height: 15vh;
-  margin-top: 10vh;/*
+  line-height: 15vh;/*
+  margin-top: 10vh;*//*
   border-bottom: 10px solid #FF6600;*//*
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: black;*/
@@ -299,6 +312,10 @@ h2{
   border-top: 1px solid #154890;
 }
 
+
+.teams{
+  background-color: #eee;
+}
 
 /* general body blocks [team] */
 .teams_body{
@@ -371,7 +388,7 @@ h2{
 
 
 .update{
-  background-color: white;/*#ea4300;*/
+  background-color: #eee;/*#ea4300;*/
   margin: 0;
   color: black;/*
   padding-bottom: 2em;*/
@@ -406,6 +423,22 @@ h2{
 
 .section-title-div{
   margin-top: 10vh;
+}
+
+
+.about-div{
+    background-color: #154890;
+}
+
+.about-div h2{
+
+  color: white;
+}
+
+
+.carousel-img{
+  overflow: hidden;
+  margin-top: -26vh;
 }
 
 .carousel-control-next,

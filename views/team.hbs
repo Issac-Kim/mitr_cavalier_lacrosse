@@ -10,23 +10,20 @@
         <link href="/design/style.css" rel="stylesheet"/>
     </head>
 
-    <body onload="updateCarousel('{{id}}')">
+    <body onload="updateCarousel('{{id}}')" class="teams">
         <!-- Navbar -->
         <div id="navbar"></div>
         <!-- end of navbar -->
 
 
 <div id="home-content">
-    <!-- team name header -->
-    <div class="teams_header_div">
-    <div class="teams_header"><h1 class=""> {{gender}}<img height="100px" src="/design/resources/pictures/cavs_logo_white.png"/>{{year}} </h1></div></div>
 
 
     <!-- photo slideshow -->
-    <div class="container-fluid photogallery" >
+    <div class="container-fluid photogallery carousel_size" >
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         
-            <div id="carousel-images" class="carousel-inner fullscreen"></div>
+            <div id="carousel-images" class="carousel-inner carousel_size"></div>
 
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -39,6 +36,10 @@
 
         </div>
     </div>
+
+    <!-- team name header -->
+    <div class="teams_header_div">
+    <div class="teams_header"><h1 class=""> {{gender}}<img height="100px" src="/design/resources/pictures/cavs_logo_white.png"/>{{year}} </h1></div></div>
     <br>
     
 
