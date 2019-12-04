@@ -56,7 +56,9 @@ body{
 }
 .photogallery{
   padding: 0;
-  margin-bottom: 5em;
+  border-top: 10px solid #FF6600;
+  border-bottom: 10px solid #FF6600;
+  margin-bottom: 0em;
 }
 .home-photo{
     padding: 0;
@@ -256,9 +258,10 @@ h2{
   text-align: center;
   background-color: #154890;
   color: white;
-  height: 15vh;
+  height: 18vh;
   line-height: 15vh;
   margin-bottom: 3vh;
+  border-bottom: 20px solid #FF6600;
 
 }
 .cav_title_1{
@@ -286,7 +289,7 @@ h2{
   height: 18vh;
   line-height: 15vh;
   margin-bottom: 3vh;
-  margin-top: 0vh;
+  margin-top: 10vh;
   border-bottom: 20px solid #FF6600;/*
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: black;*/
@@ -340,19 +343,19 @@ h2{
   width: 65vw;
   text-align: center;
   border: 0;
-  background-color: #E1D4C0;
+  background-color: #eee;
 }
 .teams_body td, .teams_body th {
-  border: 1px solid #CDBFAC;
+  border: 1px solid #fff;
   padding: 8px;
   color: black;
 }
 .teams_body tr:nth-child(even) {
-  background-color: #F5EDE3;
+  background-color: #fff;
 }
 
 .teams_body th {
-  background-color: #F5EDE3;
+  background-color: #fff;
 }
 
 .flyer-img {
@@ -360,4 +363,19 @@ h2{
   margin-left: auto;
   margin-right: auto;
   height: 75vh;
+}
+
+
+.update{
+  background-color: #ffffff;
+  margin: 0;
+  color: black;
+  padding-bottom: 2em;
+  padding-top: 1em;/*
+  border: 100px solid #154890;
+  border-bottom: 50px;*/
+}
+
+.container{
+  padding: 0;
 }

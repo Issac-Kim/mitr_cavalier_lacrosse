@@ -61,3 +61,31 @@ html,body{
 #over-background{
     background-color: #FF8C00;
 }
+
+
+/* roster table [team] */
+table{
+  width: 65vw;
+  text-align: center;
+  background-color: #eee;
+  border: 1px solid #eee;
+  border-collapse: separate;
+}
+td, th {
+  border-color: white;
+  padding: 8px;
+  color: black;
+}
+tr:nth-child(even) {
+  background-color: #fff;
+  border-color: #eee;
+}
+
+th {
+  background-color: #fff;
+}
+
+td input{
+    border: 0;
+    background-color: transparent;
+}
