@@ -65,34 +65,34 @@
                                 <option value="Girls">Girls</option>
                                 <option value="Mens">Mens</option>
                             </select>
-                            <br>
+                            <br><br>
             
                             <label>Year/Name</label>
                             <input class="form-control" type="text" name="year">
-                            <br>
+                            <br><br>
             
                             <label>Team Account: </label>
                             <select class="form-control" id="team-account-drop-down" name="owner">  </select>
-                            <br>
+                            <br><br>
             
             
                             <label>About</label><br>
                             <textarea class="form-control" name="about" rows="8" cols="100"></textarea>
-                            <br>
+                            <br><br>
             
                             <label>Coaches</label>
                             <button type="button" onclick="addField('coaches', 'coaches-form')"> + </button> <br>
                             <div id="coaches-form">
                                 <input class="form-control" type="text" name="coaches[]"> 
                             </div>
-                            <br>
+                            <br><br>
             
                             <label>Tournaments</label>
                             <button type="button" onclick="addField('tournaments', 'tournaments-form')"> + </button> <br>
                             <div id="tournaments-form">
                                 <input class="form-control" type="text" name="tournaments[]"> 
                             </div>
-                            <br>
+                            <br><br>
             
                             <label>Tryouts</label>
                             <button type="button" onclick="addField('Tryouts', 'tryouts-form')"> + </button> <br>
@@ -100,19 +100,19 @@
                                 <input class="form-control" type="text" name="tryouts[]">
                                 <br>
                             </div>
-                            <br>
+                            <br><br>
             
                             <label>Location</label>
                             <input class="form-control" type="text" name="location">
-                            <br>
+                            <br><br>
             
                             <label>Fees</label><br>
                             <textarea class="form-control" name="fees" rows="4" cols="50"></textarea>
-                            <br>
+                            <br><br>
             
                             <label>Other</label><br>
                             <textarea class="form-control" name="other" rows="8" cols="100"></textarea>
-                            <br>
+                            <br><br>
             
                             <label>Roster</label>
                             <button type="button" onclick="addRosterRow('roster-table')"> + </button>
@@ -164,7 +164,7 @@
                     <hr>
                     <div class="form-group">
                         <label> Select Team: </label> 
-                        <select class="form-control" id="edit-team-select" onclick="editTeamForm(this.value)">  </select>
+                        <select class="form-control" id="edit-team-select" onclick="editTeamForm(this.value)">  </select><br><br>
                         <div id="edit-team-form">  </div>
                     </div>
 
@@ -185,7 +185,7 @@
                             <h1>Upload Team Photos</h1>
                             <hr>
                             <label> Select Team: </label> 
-                            <select class="form-control" id="upload-photo-select" onclick="uploadPhotoForm(this.value)">  </select>
+                            <select class="form-control" id="upload-photo-select" onclick="uploadPhotoForm(this.value)">  </select><br><br>
                             <div id="upload-photo-form">  </div>
                     </div>
                 </div>

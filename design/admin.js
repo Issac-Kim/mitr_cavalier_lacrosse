@@ -101,17 +101,17 @@ function editTeamForm(id){
             
             htmlStr += '<label>About</label><br>';
             htmlStr += '<textarea class="form-control" name="about" rows="8" cols="100">' + team.about +' </textarea>';
-            htmlStr += '<br>';
+            htmlStr += '<br><br>';
             
             htmlStr += '<label>Coaches</label>';
-            htmlStr += '<button type="button" onclick="addField(\'coaches\', \'edit-coaches-form\')"> + </button> <br>';
+            htmlStr += '<button type="button" onclick="addField(\'coaches\', \'edit-coaches-form\')"> + </button> <br><br>';
             htmlStr += '<div id="edit-coaches-form">';
             $.each(team.coaches, function(i, coach) {
                 htmlStr += '<input class="form-control" type="text" name="coaches[]" value="' + coach + '">';
             });
             htmlStr += '<input class="form-control" type="text" name="coaches[]">';
             htmlStr += '</div>';
-            htmlStr += '<br>';
+            htmlStr += '<br><br>';
 
             htmlStr += '<label>Tournaments</label>';
             htmlStr += '<button type="button" onclick="addField(\'tournaments\', \'edit-tournaments-form\')"> + </button> <br>';
@@ -121,7 +121,7 @@ function editTeamForm(id){
             });
             htmlStr += '<input class="form-control" type="text" name="tournaments[]">'
             htmlStr += '</div>';
-            htmlStr += '<br>';
+            htmlStr += '<br><br>';
 
             htmlStr += '<label>Tryouts</label>';
             htmlStr += '<button type="button" onclick="addField(\'Tryouts\', \'edit-tryouts-form\')"> + </button> <br>';
@@ -131,19 +131,19 @@ function editTeamForm(id){
             });
             htmlStr += '<input class="form-control" type="text" name="tryouts[]">'
             htmlStr += '</div>';
-            htmlStr += '<br>';
+            htmlStr += '<br><br>';
 
             htmlStr += '<label>Location</label>';
             htmlStr += '<input class="form-control" type="text" name="location" value="' + team.location + '">';
-            htmlStr += '<br>';
+            htmlStr += '<br><br>';
 
             htmlStr += '<label>Fees</label><br>';
             htmlStr += '<textarea class="form-control" name="fees" rows="4" cols="50">' + team.fees + '</textarea>';
-            htmlStr += '<br>';
+            htmlStr += '<br><br>';
 
             htmlStr += '<label>Other</label><br>';
             htmlStr += '<textarea class="form-control" name="other" rows="8" cols="100">' + team.other + '</textarea>';
-            htmlStr += '<br>';
+            htmlStr += '<br><br>';
 
             htmlStr += '<label>Roster</label>';
             htmlStr += '<button type="button" onclick="addRosterRow(\'edit-roster-table\')"> + </button>';
@@ -190,13 +190,15 @@ function removeSitePhotoForm(type){
         url: "/api/photos/get-images-by-type/" + type,
         dataType: "json",
         success: function(images, status){
-            var htmlStr = ""
+            var htmlStr = "<br><br>"
             
+
             $.each(images, function(id, img) {
-                htmlStr += '<input type="checkbox" name="images[]" value="' + id + '"/>  <img src="/' + img.data.path + '" class="img-thumbnail" alt="Flyer  ">';
+                htmlStr += '<input class="image-remove" type="checkbox" name="images[]" id="' + id + '" value="' + id + '"/>  <label class="image-label" for="' + id + '"> <img src="/' + img.data.path + '" class="img-thumbnail" alt="Flyer  "></label>';
+                
             });
             
-            htmlStr += '<br><button class="btn btn-danger" type="submit">Remove</button>'
+            htmlStr += '<br><br><button class="btn btn-danger" type="submit">Remove</button>'
 
             document.getElementById("remove-site-photo-form").innerHTML = htmlStr;
         }, error: function(msg) {

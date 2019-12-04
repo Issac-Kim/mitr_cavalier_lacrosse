@@ -3,6 +3,13 @@
 html,body{
     width: 100%;
 }
+@font-face {
+    font-family: 'Play';
+    src: url("resources/fonts/Play-Regular.ttf") format("truetype");
+}
+body{
+    font-family: 'Play', sans-serif;
+}
 .navbar{
     position: fixed;
     z-index: 2;
@@ -89,4 +96,7 @@ td input{
 .img-thumbnail{
     height: 200px;
     width: 200px;
+}
+.image-remove{
+    display: none;
 }
