@@ -16,7 +16,7 @@ html,body{
 }
 
 body{
-  background-color: #E1D4C0;
+
   font-family: 'Play', sans-serif;
 }
 
@@ -56,6 +56,7 @@ body{
 }
 .photogallery{
   padding: 0;
+  margin-bottom: 5em;
 }
 .home-photo{
     padding: 0;
@@ -63,9 +64,8 @@ body{
     margin: 0;
 }
 .home-photo img{
-
-  width: 100%;
-  margin: 0% 0 -30%;
+  height: auto;
+  min-width: 100%;
 }
 .nav-link{
     text-decoration: none;
@@ -92,9 +92,7 @@ body{
     margin: auto;
     margin-top: 3em;
 }
-#home-content{
-    padding-top: 5em;
-}
+
 
 /* Design for team program information */
 .row{
@@ -231,7 +229,7 @@ body{
 
 
 /* HEADERS */
-h1, h2, h3, h4{}
+
 h1{
   font-family: 'Blockletter';
   font-size: 5em;
@@ -240,7 +238,18 @@ h1{
   line-height: 15vh;
   height: inherit;
 }
-
+h2{
+  font-family: 'Blockletter';
+  font-size: 3em;
+  letter-spacing: 0.075em;
+  word-spacing: 0.3em;
+  line-height: 15vh;
+  height: inherit;
+}
+.section-title{
+  text-align: center;
+  margin: auto;
+}
 
 /* title banner [index] */
 .cav_title{
@@ -250,7 +259,7 @@ h1{
   height: 15vh;
   line-height: 15vh;
   margin-bottom: 3vh;
-  margin-top: 8vh;
+
 }
 .cav_title_1{
   height: inherit;
