@@ -400,6 +400,8 @@ h2{
 
 #intro-photo-div{
   position: relative;
+  overflow: hidden;
+  height: 75%;
 }
 
 .section-title-div{
@@ -409,4 +411,8 @@ h2{
 .carousel-control-next,
 .carousel-control-prev {
     filter: invert(100%);
+}
+
+.wrap {
+  width: 100%;
 }

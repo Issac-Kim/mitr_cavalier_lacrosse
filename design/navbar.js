@@ -1,5 +1,17 @@
-// navbar scroll color animation
+$("#scroller").scroll(function(){
+    console.log("called");
+    var pos = $(this).scrollTop();
+    var home_content = $("#home-content").offset().top;
+
+    if(pos >= home_content){
+        $("#over-background").css({"background-color": "#154890"}); // make navbar background black when scrolling down
+    }else{
+        $("#over-background").css("background-color", "transparent"); // reset navbar to transparent
+    }
+});
+
 $(this).scroll(function(){
+    console.log("called");
     var pos = $(this).scrollTop();
     var home_content = $("#home-content").offset().top;
 
