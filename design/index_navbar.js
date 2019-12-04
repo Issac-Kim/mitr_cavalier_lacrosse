@@ -1,5 +1,5 @@
 // navbar scroll color animation
-$(this).scroll(function(){
+$("#scroller").scroll(function(){
     var pos = $(this).scrollTop();
     var home_content = $("#home-content").offset().top;
 
