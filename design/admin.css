@@ -103,6 +103,18 @@ td input{
 .image-label{
     cursor: pointer;
 }
-.img-active{
+:checked+label {
+    border-color: #ddd;
+  }
+  
+:checked+label::before {
     border-color: navy;
+    transform: scale(1);
+}
+  
+:checked+label img {
+    transform: scale(0.9);
+    border-color: navy;
+    box-shadow: 0 0 5px #333;
+    z-index: -1;
 }

@@ -48,6 +48,16 @@ function loadCarousel(type) {
     });
 }
 
+function removePhotoUpdate(){
+    console.log("hi");
+    if($(this).hasClass("img-active")){
+        $(this).removeClass("img-active");
+    }else{
+        $(this).addClass("img-active");
+    }
+
+}
+
 function populatePictures(){
     $.ajax({
         type: "GET",

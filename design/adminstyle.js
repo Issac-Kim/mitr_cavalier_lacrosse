@@ -68,11 +68,3 @@ $("#upload-site-photo-btn").click(function(){
     $("#upload-site-photo").removeClass("hidden");
 });
 
-$(".img-thumbnail").click(function(){
-    console.log("hi");
-    if($(this).hasClass("img-active")){
-        $(this).removeClass("img-active");
-    }else{
-        $(this).addClass("img-active");
-    }
-});
