@@ -68,7 +68,8 @@ body{
     z-index: -1;
 }
 .photogallery{
-  padding: 0;/*
+  padding: 0;
+  /*
   border-top: 10px solid #FF6600;
   border-bottom: 10px solid #FF6600;*/
   margin-bottom: 0em;
@@ -124,6 +125,7 @@ body{
   width: 70vw;
   margin-left: 15vw;
   margin-right: 15vw;
+  margin-bottom: 5vh;
 }
 
 .team-card{
@@ -390,9 +392,9 @@ h2{
 .update{
   background-color: #eee;/*#ea4300;*/
   margin: 0;
-  color: black;/*
-  padding-bottom: 2em;*/
-  padding-top: 1em;/*
+  color: black;
+  padding-bottom: 1em;
+  padding-top: 5vh;/*
   border: 100px solid #154890;
   border-bottom: 50px;*/
 }
@@ -422,7 +424,7 @@ h2{
 }
 
 .section-title-div{
-  margin-top: 10vh;
+  margin-top: 5vh;
 }
 
 
