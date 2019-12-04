@@ -22,7 +22,7 @@ html,body{
     color: white;
 }
 .nav-link:hover {
-    color: navy;
+    color: #FF8C00;
     border-bottom: 1px solid Black;
 }
 .hidden{
@@ -59,7 +59,7 @@ html,body{
 }
 
 #over-background{
-    background-color: #FF8C00;
+    background-color: #154890;;
 }
 
 
