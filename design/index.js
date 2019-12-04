@@ -55,8 +55,16 @@ function populatePictures(){
         dataType: "json",
         success: function(responseData, status){
             htmlStr = '';
+            var j=0;
             $.each(responseData, function(i, image) {
-                htmlStr += '<img src="/' + image.data.path + '">';
+                if(j==0) {
+                    htmlStr += '<div class="carousel-item active">';
+                } else {
+                    htmlStr +='<div class="carousel-item">';
+                }
+                htmlStr += '<img class="flyer-img" src="/' + image.data.path + '" alt="First slide">';
+                htmlStr += '</div>';
+                j++;
             });
             document.getElementById("trophy").innerHTML = htmlStr;
         }, error: function(msg) {
@@ -69,10 +77,12 @@ function populatePictures(){
         url: "/api/photos/get-images-by-type/general",
         dataType: "json",
         success: function(responseData, status){
-            htmlStr = '';
+            htmlStr = '<div class="row text-center text-lg-left">';
             $.each(responseData, function(i, image) {
-                htmlStr += '<img src="/' + image.data.path + '">';
+                htmlStr +=  '<div class="col-lg-3 col-md-4 col-6"><a href="#" class="d-block mb-4 h-100"><img class="img-fluid img-thumbnail" src="/' + image.data.path +'" alt=""></a></div>';
+
             });
+            htmlStr += '</div>'
             document.getElementById("general").innerHTML = htmlStr;
         }, error: function(msg) {
             alert("There was a problem: " + msg.status + " " + msg.statusText);
