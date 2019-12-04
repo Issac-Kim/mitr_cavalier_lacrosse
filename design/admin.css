@@ -100,3 +100,9 @@ td input{
 .image-remove{
     display: none;
 }
+.image-label{
+    cursor: pointer;
+}
+.img-active{
+    border-color: navy;
+}
