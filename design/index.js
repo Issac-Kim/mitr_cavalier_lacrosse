@@ -21,12 +21,10 @@ function updateCarousel(id){
     });
 }
 
-function loadCarousels() {
-
-
+function loadCarousel(type) {
     $.ajax({
         type: "GET",
-        url: "/api/photos/get-images-by-page/flyers",
+        url: "/api/photos/get-images-by-type/"+type,
         dataType: "json",
         success: function(responseData, status){
             console.log(responseData);
@@ -43,7 +41,39 @@ function loadCarousels() {
                 j++;
             });
             console.log(htmlStr);
-            document.getElementById("carousel-flyers").innerHTML = htmlStr;
+            document.getElementById("carousel-" + type).innerHTML = htmlStr;
+        }, error: function(msg) {
+            alert("There was a problem: " + msg.status + " " + msg.statusText);
+        }
+    });
+}
+
+function populatePictures(){
+    $.ajax({
+        type: "GET",
+        url: "/api/photos/get-images-by-type/trophy",
+        dataType: "json",
+        success: function(responseData, status){
+            htmlStr = '';
+            $.each(responseData, function(i, image) {
+                htmlStr += '<img src="/' + image.data.path + '">';
+            });
+            document.getElementById("trophy").innerHTML = htmlStr;
+        }, error: function(msg) {
+            alert("There was a problem: " + msg.status + " " + msg.statusText);
+        }
+    });
+
+    $.ajax({
+        type: "GET",
+        url: "/api/photos/get-images-by-type/general",
+        dataType: "json",
+        success: function(responseData, status){
+            htmlStr = '';
+            $.each(responseData, function(i, image) {
+                htmlStr += '<img src="/' + image.data.path + '">';
+            });
+            document.getElementById("general").innerHTML = htmlStr;
         }, error: function(msg) {
             alert("There was a problem: " + msg.status + " " + msg.statusText);
         }

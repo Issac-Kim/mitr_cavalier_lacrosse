@@ -103,6 +103,10 @@ $( document ).ready(function() {
                             <div id="mens"></div>
                         </div>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/api/photos/page"> Photos </a>
+                    </li>
                     
                     <li class="nav-item">
                         <a class="nav-link" href="http://www.cavalierlacrosse.com/Store/Default.asp?menu=TAB:20350&org=Cavalierlacrosse.com"> Store </a>

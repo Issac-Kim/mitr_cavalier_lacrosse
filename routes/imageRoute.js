@@ -22,8 +22,8 @@ router.post('/upload/:page', upload.array('photo', 20), async (req, res) => {
       }
 });
 
-router.get('/get-images-by-page/:page', async (req, res) => {
-    Image.find({page: req.params.page}, function(err, imgs) {
+router.get('/get-images-by-type/:type', async (req, res) => {
+    Image.find({page: req.params.type}, function(err, imgs) {
         var imgMap = {};
     
         imgs.forEach(function(img) {
@@ -34,6 +34,11 @@ router.get('/get-images-by-page/:page', async (req, res) => {
       });
 
 });
+
+
+router.get('/page', (req, res) => {
+    res.render("photos", {});
+  });
 
 
 module.exports = router;
