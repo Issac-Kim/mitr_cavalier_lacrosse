@@ -1,3 +1,14 @@
+// navbar scroll color animation
+$(this).scroll(function(){
+    var pos = $(this).scrollTop();
+    var home_content = $("#home-content").offset().top;
+
+    if(pos >= home_content){
+        $("#over-background").css("background-color", "#154890"); // make navbar background black when scrolling down
+    }else{
+        $("#over-background").css("background-color", "transparent"); // reset navbar to transparent
+    }
+});
 
 function updateMenu(){
     $.ajax({
@@ -59,7 +70,7 @@ function updateMenu(){
 
 $( document ).ready(function() {
     var htmlStr = `
-    <nav class="navbar navbar-expand" id="reg-navbar">
+    <nav class="navbar navbar-expand" id="over-background">
             <a class="navbar-brand" href="/"><img height="50em" src="/design/resources/pictures/cavs_logo_white.png"/></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

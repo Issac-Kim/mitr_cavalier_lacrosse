@@ -42,7 +42,7 @@ body{
 }
 #reg-navbar{
     color: white;
-    background-color: navy;
+    background-color: #FF6600;
 }
 .jumbotron{
     top: 0px;
@@ -286,7 +286,8 @@ h2{
   height: 18vh;
   line-height: 15vh;
   margin-bottom: 3vh;
-  margin-top: 0vh;
+  margin-top: 9vh;
+
   border-bottom: 20px solid #FF6600;/*
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: black;*/
