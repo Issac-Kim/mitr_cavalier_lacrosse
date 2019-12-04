@@ -1,37 +1,51 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<html>
+    <head>
+        <title>Cavalier Lacrosse: Admin Panel</title>
+       <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+        <link href="/design/admin.css" rel="stylesheet"/>
+    </head>
 
-<div class="container">
-    <div class="card card-login mx-auto bg-light">
-        <div class="card-body">
-            <form role="form" method="post" action="/api/user/login">
-                <input type="hidden" name="_token" value="">
-                <div class="form-group">
-                    <label class="control-label">Username</label>
-                    <div>
-                        <input type="username" class="form-control input-lg" name="username">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label class="control-label">Password</label>
-                    <div>
-                        <input type="password" class="form-control input-lg" name="password">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <div>
-                        <button type="submit" class="btn btn-success">Login</button>
-                    </div>
-                </div>
-            </form>
+    <body>
+        <div id="navbar"></div>
 
-            {{# if error }}
-                <section> {{ error }} </section>
-            {{/if}}
+        <div class="container" id="admin-panel">
+            <div class="card card-login mx-auto bg-light">
+                <div class="card-body">
+                    <form role="form" method="post" action="/api/user/login">
+                        <input type="hidden" name="_token" value="">
+                        <div class="form-group">
+                            <label class="control-label">Username</label>
+                            <div>
+                                <input type="username" class="form-control input-lg" name="username">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="control-label">Password</label>
+                            <div>
+                                <input type="password" class="form-control input-lg" name="password">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div>
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </div>
+                    </form>
 
+                    {{# if error }}
+                        <section> {{ error }} </section>
+                    {{/if}}
+
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="/design/admin.js"></script>
+        <script src="/design/coach.js"></script>
+        <script src="/design/navbar.js"></script>
+    </body>
+</html>
