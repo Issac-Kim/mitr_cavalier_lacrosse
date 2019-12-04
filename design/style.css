@@ -52,7 +52,6 @@ body{
   max-width: 100vw;
   margin: 0;
   overflow-x: hidden;
-  vertical-align: bottom;
   overflow-y: hidden;
 }
 
@@ -489,10 +488,16 @@ h2{
   color: #ed4300;
 }
 
+.photo-header b{
+  font-weight: normal;
+  font-size: 1.25em;
+}
+
 .photo-title{
   margin-top: 10vh;;
 }
 
 #general-pics{
   background-color: #eee;
+  padding: 0 5vh 3vh 5vh;
 }
