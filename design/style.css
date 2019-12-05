@@ -516,3 +516,23 @@ h2{
   right: 0;
   left: 0;
 }
+
+.modal-up{
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.modal-down{
+  display: none;
+}
+.noscroll{
+  overflow-y: none;
+}
+#modal-content{
+  margin: auto;
+  width: 40%;
+  text-align: right;
+  margin-top: 10vh;
+}

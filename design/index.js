@@ -81,11 +81,21 @@ function populatePictures(){
         success: function(responseData, status){
             htmlStr = '<div class="row text-center text-lg-left">';
             $.each(responseData, function(i, image) {
-                htmlStr +=  '<div class="col-lg-3 col-md-4 col-6"><div class="thumbnail-back"><img class="img-fluid img-thumb" src="/' + image.data.path +'" alt=""></div></div>';
+                htmlStr +=  '<div class="col-lg-3 col-md-4 col-6"><div class="thumbnail-back"><img class="img-fluid img-thumb" data-toggle="modal" data-target="#exampleModal" src="/' + image.data.path +'" alt=""></div></div>';
 
             });
             htmlStr += '</div>'
             document.getElementById("general").innerHTML = htmlStr;
+            $(".img-thumb").click(function(){
+                document.getElementById("modal-image").innerHTML = '<img src="' + $(this).attr("src") + '" width="100%"/>'; 
+                $("#modal").removeClass("modal-down");
+                $("#modal").addClass("modal-up");
+                $("body").addClass("noscroll");
+            });
+            $("#modal-close").click(function(){
+                $("#modal").addClass("modal-down");
+                $("#modal").removeClasse("modal-up");
+            });
         }, error: function(msg) {
             alert("There was a problem: " + msg.status + " " + msg.statusText);
         }
