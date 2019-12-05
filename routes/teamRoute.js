@@ -105,15 +105,17 @@ router.post('/update-team-by-id/:id', async (req, res) => {
   req.body.tryouts = req.body.tryouts.filter(function(a) { return a.trim() != ''; });
 
   var players = [];
-  for (var i=0; i<req.body.number.length; i++) {
-    var jsonObj = { 
-      "Number": req.body.number[i].trim(), 
-      "firstName": req.body.first[i].trim(), 
-      "lastName": req.body.last[i].trim(),
-      "position": req.body.position[i].trim()
-    }
-    if(jsonObj.Number != "" || jsonObj.firstName != "" || jsonObj.lastName != "" || jsonObj.position != "") {
-      players.push(jsonObj);
+  if (typeof req.body.number !== 'undefined') {
+    for (var i=0; i<req.body.number.length; i++) {
+      var jsonObj = { 
+        "Number": req.body.number[i].trim(), 
+        "firstName": req.body.first[i].trim(), 
+        "lastName": req.body.last[i].trim(),
+        "position": req.body.position[i].trim()
+      }
+      if(jsonObj.Number != "" || jsonObj.firstName != "" || jsonObj.lastName != "" || jsonObj.position != "") {
+        players.push(jsonObj);
+      }
     }
   }
 
