@@ -43,7 +43,7 @@ function updateMenu(){
                      }
                 } else if (team.gender == "Girls") {
                     element = document.getElementById("youth-girls");
-                    boysCount--;
+                    girlsCount--;
                     element.appendChild(link);
                     if(girlsCount > 0){ 
                         var div = document.createElement("div");
