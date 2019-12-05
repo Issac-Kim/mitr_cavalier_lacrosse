@@ -523,12 +523,21 @@ h2{
   top: 0;
   width: 100vw;
   height: 100vh;
+
+}
+#modal-image{
+  background-color: none !important;
+  opacity: 1 !important;
 }
 .modal-down{
   display: none;
 }
 .noscroll{
   overflow-y: none;
+}
+#modal{
+  background-color:rgb(0,0,0);
+  opacity:0.8;
 }
 #modal-content{
   margin: auto;
