@@ -90,12 +90,24 @@ function populatePictures(){
                 document.getElementById("modal-image").innerHTML = '<img src="' + $(this).attr("src") + '" width="100%"/>'; 
                 $("#modal").removeClass("modal-down");
                 $("#modal").addClass("modal-up");
-                $("body").addClass("noscroll");
             });
             $("#modal-close").click(function(){
                 $("#modal").addClass("modal-down");
                 $("#modal").removeClasse("modal-up");
             });
+            $("#modal").click(function(evt){
+                if(evt.target.id == "modal-image")
+                    return;
+                //For descendants of menu_content being clicked, remove this check if you do not want to put constraint on descendants.
+                if($(evt.target).closest('#modal-image').length)
+                    return;    
+                $("#modal").addClass("modal-down");
+                $("#modal").removeClass("modal-up");
+                
+                
+            });
+    
+
         }, error: function(msg) {
             alert("There was a problem: " + msg.status + " " + msg.statusText);
         }
