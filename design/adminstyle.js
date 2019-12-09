@@ -67,4 +67,3 @@ $("#upload-site-photo-btn").click(function(){
     $("#upload-photo").addClass("hidden");
     $("#upload-site-photo").removeClass("hidden");
 });
-

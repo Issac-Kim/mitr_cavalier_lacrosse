@@ -114,3 +114,12 @@ function populatePictures(){
         }
     });
 }
+
+$(".boys").hover(
+    function(){$("#boys-links").removeClass("hidden")},
+    function(){$("#boys-links").addClass("hidden")}
+);
+$(".girls").hover(
+    function(){$("#girls-links").removeClass("hidden")},
+    function(){$("#girls-links").addClass("hidden")}
+);

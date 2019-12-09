@@ -193,80 +193,6 @@ body{
 #registration{
     padding-bottom: 10em;
 }
-/* Month header */
-
-#calendar ul{
-    list-style-type: none;
-}
-.month {
-    padding: 70px 25px;
-    width: 100%;
-    background: navy;
-    text-align: center;
-  }
-
-  /* Month list */
-  .month ul {
-    margin: 0;
-    padding: 0;
-  }
-
-  .month ul li {
-    color: white;
-    font-size: 20px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-  }
-
-  /* Previous button inside month header */
-  .month .prev {
-    float: left;
-    padding-top: 10px;
-  }
-
-  /* Next button */
-  .month .next {
-    float: right;
-    padding-top: 10px;
-  }
-
-  /* Weekdays (Mon-Sun) */
-  .weekdays {
-    margin: 0;
-    padding: 10px 0;
-    background-color:#ddd;
-  }
-
-  .weekdays li {
-    display: inline-block;
-    width: 13.6%;
-    color: #666;
-    text-align: center;
-  }
-
-  /* Days (1-31) */
-  .days {
-    padding: 10px 0;
-    background: #eee;
-    margin: 0;
-  }
-
-  .days li {
-    list-style-type: none;
-    display: inline-block;
-    width: 13.6%;
-    text-align: center;
-    margin-bottom: 5px;
-    font-size:12px;
-    color: #777;
-  }
-
-  /* Highlight the "current" day */
-  .days li .active {
-    padding: 5px;
-    background: navy;
-    color: white !important
-  }
 
   /* sign up information */
   .upload{
@@ -555,9 +481,13 @@ h2{
   margin-top: 15vh;
   z-index: 10;
 }
-.footer h6,a{
+.footer h6{
+  font-size: 0.8em;
+}
+.footer a{
   font-size: 0.6em;
 }
+
 .footer{
   background-color: #154890;
   color: white;
@@ -575,4 +505,17 @@ h2{
 }
 .hidden{
   display: none;
+}
+.footer a{
+  text-decoration: none;
+}
+.footer a:link{
+  color: lightgrey;
+}
+.footer a:visited {
+  color: lightgrey;
+}
+.footer a:hover {
+  color: #FF6600;
+  
 }
