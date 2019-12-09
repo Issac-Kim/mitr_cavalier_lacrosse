@@ -115,11 +115,19 @@ function populatePictures(){
     });
 }
 
-$(".boys").hover(
-    function(){$("#boys-links").removeClass("hidden")},
-    function(){$("#boys-links").addClass("hidden")}
-);
-$(".girls").hover(
-    function(){$("#girls-links").removeClass("hidden")},
-    function(){$("#girls-links").addClass("hidden")}
-);
+$("#boys").click(function(){
+    if($("#boys-links").hasClass("hidden")){
+        $("#boys-links").removeClass("hidden");
+        $("#girls-links").addClass("hidden");
+    }else{
+        $("#boys-links").addClass("hidden");
+    }
+});
+$("#girls").click(function(){
+    if($("#girls-links").hasClass("hidden")){
+        $("#girls-links").removeClass("hidden");
+        $("#boys-links").addClass("hidden");
+    }else{
+        $("#girls-links").addClass("hidden");
+    }
+});
