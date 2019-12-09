@@ -555,3 +555,24 @@ h2{
   margin-top: 15vh;
   z-index: 10;
 }
+.footer h6,a{
+  font-size: 0.6em;
+}
+.footer{
+  background-color: #154890;
+  color: white;
+  padding: 2.5em;
+}
+.footer div{
+  padding: 0 0.5em;
+}
+.footer-main{
+  padding-bottom: 0.5em;
+}
+.footer a{
+  display: block;
+  margin-bottom: 0.5em;
+}
+.hidden{
+  display: none;
+}

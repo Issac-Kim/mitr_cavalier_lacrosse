@@ -9,6 +9,7 @@ function addField(arrName, elementId){
 }
 
 function populateOnload(){
+    // populate the different teams for the admin console
     populateAccountDropDown();
     populateTeamDropDown("edit-team-select");
     populateTeamDropDown("remove-team-select")
@@ -16,6 +17,7 @@ function populateOnload(){
 }
 
 function addRosterRow(table){
+    // add a new row for player addition in roster editing 
     var htmlStr ="";
     htmlStr += "<tr>";
     htmlStr += '<td><input type ="text" name="number[]"></td>';

@@ -1,15 +1,82 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+            <title>Cavalier Lacrosse: Admin Panel</title>
+            <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+             <link href="/design/admin.css" rel="stylesheet"/>
     </head>
     <body>
-        <div id="playbook-container">
-  
-        </div>
+            <nav class="navbar navbar-expand" id="over-background" style="background-color: #154890">
+                    <a class="navbar-brand" href="/"><img height="50em" src="/design/resources/pictures/cavs_logo_white.png"/></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Boys </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        
+                                    <div id="youth-boys"></div>
+                                    
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Girls </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    
+                                    <div id="youth-girls"></div>
+                                
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Mens </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    
+                                    <div id="mens"></div>
+                                </div>
+                            </li>
+        
+                            <li class="nav-item">
+                                <a class="nav-link" href="/api/photos/page"> Photos </a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://www.cavalierlacrosse.com/Store/Default.asp?menu=TAB:20350&org=Cavalierlacrosse.com"> Store </a>
+                            </li>
+        
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://www.cavalierlacrosse.com/Registration/Default.asp?n=68011&org=Cavalierlacrosse.com""> Register </a>
+                            </li>
+        
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                US Lacrosse
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="https://www.uslaxmagazine.com/?utm_source=LA_navigation">USLaxMagazine</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="http://www.uslacrosse.org/membership.aspx?utm_source=LA_navigation">Membership</a>              
+                                </div>
+                            </li>
+                        </ul>
+        
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/api/user/login">Settings</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+    
         <script src="resources/jquery.min.js"></script>
         <script src="resources/p5/p5.min.js"></script>
-       
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="/design/admin.js"></script>
         <script src="playbook.js"></script>
     </body>
 </html>
